@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replica AI - Virtual Try-Ons</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
     <link rel="preconnect" href="https://cdn.segment.com" crossorigin>
@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav class="flex items-center justify-between p-4 lg:p-6 max-w-[2000px] mx-auto w-full">
         <div class="flex items-center space-x-2">
-            <img src="images/Logo (1).png" alt="Replica AI Logo" class="h-12 lg:h-16">
+            <img src="images/Logo.webp" alt="Replica AI Logo" class="h-12 lg:h-16" width="160" height="64">
         </div>
         <div class="space-x-6">
             <a href="/about" class="hover:text-purple-500">About</a>
@@ -126,9 +126,12 @@
 
         <!-- Images Section -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
-            <img src="images/Rhys front full.jpg" alt="Front View" loading="lazy" class="rounded-lg shadow-lg">
-            <img src="images/Rhys front semi.jpg" alt="Side View" loading="lazy" class="rounded-lg shadow-lg">
-            <img src="images/Rhys Back.png" alt="Back View" loading="lazy" class="rounded-lg shadow-lg">
+            <img src="images/Rhys-front-full.webp" alt="Virtual try-on front view" class="w-full rounded-lg" width="800"
+                height="600" loading="lazy">
+            <img src="images/Rhys-front-semi.webp" alt="Virtual try-on three-quarter view" class="w-full rounded-lg"
+                width="800" height="600" loading="lazy">
+            <img src="images/Rhys-Back.webp" alt="Virtual try-on back view" class="w-full rounded-lg" width="800"
+                height="600" loading="lazy">
         </div>
     </section>
 
@@ -151,7 +154,13 @@
             const container = document.getElementById('video-container');
             const placeholder = document.getElementById('video-placeholder');
 
-            container.innerHTML = '<iframe src="https://www.loom.com/embed/c57ff3ca5a1f44279a741f011857c011" class="w-full h-full rounded-lg" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            // Create a lightweight placeholder iframe first
+            container.innerHTML = '<iframe src="about:blank" class="w-full h-full rounded-lg" frameborder="0"></iframe>';
+
+            // Then load the actual video URL
+            requestAnimationFrame(() => {
+                container.firstChild.src = "https://www.loom.com/embed/c57ff3ca5a1f44279a741f011857c011";
+            });
 
             container.classList.remove('hidden');
             placeholder.classList.add('hidden');
