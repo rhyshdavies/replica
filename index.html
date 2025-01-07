@@ -5,8 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replica AI - Virtual Try-Ons</title>
-    <link rel="preload" href="your-font-file.woff2" as="font" type="font/woff2" crossorigin>
     <style>
+        /* Add these at the top of your existing styles */
+        body {
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            overflow-y: scroll;
+            /* Prevent layout shift from scrollbar */
+        }
+
+        /* Reserve space for images */
+        img {
+            aspect-ratio: attr(width) / attr(height);
+            height: auto;
+        }
+
+        /* Reserve space for the video container */
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            min-height: 300px;
+            /* Adjust based on your needs */
+        }
+
+        /* Prevent layout shift from font loading */
+        h1,
+        h2,
+        h3,
+        p {
+            font-family: system-ui, -apple-system, sans-serif;
+            /* Fallback fonts */
+            max-height: inherit;
+        }
+
         /* Critical Tailwind utilities */
         .min-h-screen {
             min-height: 100vh
@@ -379,6 +411,30 @@
             text-align: center;
             margin-bottom: 1rem;
             font-display: swap;
+            content-visibility: visible;
+            contain-intrinsic-size: 0 60px;
+            /* Reserve space for the heading */
+            will-change: auto;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Ensure the section containing the heading loads quickly */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 5000px;
+        }
+
+        /* Add mobile-first optimizations */
+        @media (max-width: 1023px) {
+            .text-4xl.lg\:text-5xl {
+                font-size: 2rem;
+                /* Slightly smaller on mobile */
+                line-height: 1.2;
+                letter-spacing: -0.02em;
+                /* Tighter letter spacing on mobile */
+                padding: 0 1rem;
+                /* Add some padding on mobile */
+            }
         }
 
         @media (min-width: 1024px) {
@@ -388,17 +444,38 @@
             }
         }
 
-        /* Ensure the section containing the heading loads quickly */
-        section {
-            content-visibility: auto;
-            contain-intrinsic-size: 1px 5000px;
+        body {
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            overflow-y: scroll;
+            /* Prevent layout shift from scrollbar */
+        }
+
+        /* Reserve space for images */
+        img {
+            aspect-ratio: attr(width) / attr(height);
+            height: auto;
+        }
+
+        /* Reserve space for the video container */
+        .aspect-video {
+            aspect-ratio: 16 / 9;
+            height: auto;
+            min-height: 300px;
+            /* Adjust based on your needs */
+        }
+
+        /* Prevent layout shift from font loading */
+        h1,
+        h2,
+        h3,
+        p {
+            font-family: system-ui, -apple-system, sans-serif;
+            /* Fallback fonts */
+            max-height: inherit;
         }
     </style>
-    <link rel="preload" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
-    </noscript>
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
     <link rel="preconnect" href="https://cdn.segment.com" crossorigin>
@@ -409,7 +486,7 @@
     <!-- Navigation -->
     <nav class="flex items-center justify-between p-4 lg:p-6 max-w-[2000px] mx-auto w-full">
         <div class="flex items-center space-x-2">
-            <img src="images/Logo.webp" alt="Replica AI Logo" class="h-12 lg:h-16" width="160" height="64">
+            <img src="images/Logo (2).webp" alt="Replica AI Logo" class="h-12 lg:h-16" width="160" height="64">
         </div>
         <div class="space-x-6">
             <a href="/about" class="hover:text-purple-500">About</a>
@@ -427,15 +504,13 @@
                 Book a Demo
             </a>
         </div>
-        <div class="relative aspect-video lg:col-span-3">
+        <div class="relative aspect-video lg:col-span-3" style="min-height: 300px">
             <div id="video-placeholder" class="relative w-full h-full rounded-lg bg-black cursor-pointer">
-                <!-- Add your video thumbnail image -->
-                <img src="images/video-thumbnail.jpg" alt="Video thumbnail"
-                    class="w-full h-full object-cover rounded-lg">
-                <!-- Play button overlay -->
+                <img src="images/Thumbnail.webp" alt="Video thumbnail" class="w-full h-full object-cover rounded-lg">
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <button onclick="loadVideo()" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full p-4">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                    <button onclick="loadVideo()" class="bg-purple-600 hover:bg-purple-700 text-white rounded-full p-4"
+                        aria-label="Play video about Replica AI virtual try-ons" title="Play video">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                             <path
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
                         </svg>
@@ -448,7 +523,8 @@
 
     <!-- Why Use Virtual Try On Section -->
     <section class="py-16 lg:py-24 px-4 lg:px-8">
-        <h2 class="text-4xl lg:text-5xl text-center mb-4" style="content-visibility: visible">
+        <h2 class="text-4xl lg:text-5xl text-center mb-4"
+            style="content-visibility: visible; contain-intrinsic-size: 0 60px;">
             Why Use Virtual Try On?
         </h2>
         <p class="text-center text-gray-400 mb-16">
@@ -521,11 +597,11 @@
 
         <!-- Images Section -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
-            <img src="images/Rhys-front-full.webp" alt="Virtual try-on front view" class="w-full rounded-lg" width="800"
+            <img src="images/Rhys front full.webp" alt="Virtual try-on front view" class="w-full rounded-lg" width="800"
                 height="600" loading="lazy">
-            <img src="images/Rhys-front-semi.webp" alt="Virtual try-on three-quarter view" class="w-full rounded-lg"
+            <img src="images/Rhys front semi.webp" alt="Virtual try-on three-quarter view" class="w-full rounded-lg"
                 width="800" height="600" loading="lazy">
-            <img src="images/Rhys-Back.webp" alt="Virtual try-on back view" class="w-full rounded-lg" width="800"
+            <img src="images/Rhys Back.webp" alt="Virtual try-on back view" class="w-full rounded-lg" width="800"
                 height="600" loading="lazy">
         </div>
     </section>
