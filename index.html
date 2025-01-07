@@ -5,7 +5,400 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replica AI - Virtual Try-Ons</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preload" href="your-font-file.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        /* Critical Tailwind utilities */
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .bg-black {
+            background-color: #000
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .text-gray-400 {
+            color: #9ca3af
+        }
+
+        .text-purple-400 {
+            color: #a78bfa
+        }
+
+        .text-purple-500 {
+            color: #8b5cf6
+        }
+
+        .bg-purple-600 {
+            background-color: #7c3aed
+        }
+
+        .bg-purple-600\/10 {
+            background-color: rgb(124 58 237 / 0.1)
+        }
+
+        .hover\:bg-purple-700:hover {
+            background-color: #6d28d9
+        }
+
+        .hover\:text-purple-500:hover {
+            color: #8b5cf6
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-24 {
+            height: 6rem
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-24 {
+            width: 6rem
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .max-w-7xl {
+            max-width: 80rem
+        }
+
+        .max-w-\[2000px\] {
+            max-width: 2000px
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .gap-12 {
+            gap: 3rem
+        }
+
+        .space-x-2>*+* {
+            margin-left: 0.5rem
+        }
+
+        .space-x-6>*+* {
+            margin-left: 1.5rem
+        }
+
+        .space-y-2>*+* {
+            margin-top: 0.5rem
+        }
+
+        .space-y-4>*+* {
+            margin-top: 1rem
+        }
+
+        .space-y-6>*+* {
+            margin-top: 1.5rem
+        }
+
+        .space-y-12>*+* {
+            margin-top: 3rem
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .bg-white {
+            background-color: #fff
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-6xl {
+            font-size: 3.75rem;
+            line-height: 1
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .font-light {
+            font-weight: 300
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .mt-12 {
+            margin-top: 3rem
+        }
+
+        .aspect-video {
+            aspect-ratio: 16 / 9
+        }
+
+        .object-cover {
+            object-fit: cover
+        }
+
+        .object-contain {
+            object-fit: contain
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:h-16 {
+                height: 4rem
+            }
+
+            .lg\:text-8xl {
+                font-size: 6rem;
+                line-height: 1
+            }
+
+            .lg\:text-5xl {
+                font-size: 3rem;
+                line-height: 1
+            }
+
+            .lg\:text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-5 {
+                grid-template-columns: repeat(5, minmax(0, 1fr))
+            }
+
+            .lg\:col-span-2 {
+                grid-column: span 2 / span 2
+            }
+
+            .lg\:col-span-3 {
+                grid-column: span 3 / span 3
+            }
+
+            .lg\:p-6 {
+                padding: 1.5rem
+            }
+
+            .lg\:p-8 {
+                padding: 2rem
+            }
+
+            .lg\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+
+            .lg\:px-12 {
+                padding-left: 3rem;
+                padding-right: 3rem
+            }
+
+            .lg\:pt-20 {
+                padding-top: 5rem
+            }
+
+            .lg\:py-24 {
+                padding-top: 6rem;
+                padding-bottom: 6rem
+            }
+        }
+
+        /* Optimize the LCP heading */
+        .text-4xl.lg\:text-5xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-display: swap;
+        }
+
+        @media (min-width: 1024px) {
+            .text-4xl.lg\:text-5xl {
+                font-size: 3rem;
+                line-height: 1;
+            }
+        }
+
+        /* Ensure the section containing the heading loads quickly */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 5000px;
+        }
+    </style>
+    <link rel="preload" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    </noscript>
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
     <link rel="preconnect" href="https://cdn.segment.com" crossorigin>
@@ -55,7 +448,9 @@
 
     <!-- Why Use Virtual Try On Section -->
     <section class="py-16 lg:py-24 px-4 lg:px-8">
-        <h2 class="text-4xl lg:text-5xl text-center mb-4">Why Use Virtual Try On?</h2>
+        <h2 class="text-4xl lg:text-5xl text-center mb-4" style="content-visibility: visible">
+            Why Use Virtual Try On?
+        </h2>
         <p class="text-center text-gray-400 mb-16">
             Fashion E-Commerce is booming, but is still often barely profitable.
         </p>
