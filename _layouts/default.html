@@ -2,25 +2,61 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/path/to/your/styles.css">
+    <style>
+        .nav-link {
+            color: #a78bfa;
+            /* Purple color for links */
+            text-decoration: none;
+            /* Remove underline */
+            margin-left: 20px;
+            /* Space between links */
+            font-size: 1rem;
+            /* Font size */
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            /* Change color on hover */
+        }
+
+        .logo {
+            height: 50px;
+            /* Adjust height as needed */
+            margin-right: auto;
+            /* Space between logo and links */
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>My Blog</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/blog">Blog</a>
-        </nav>
-    </header>
+    <nav style="display: flex; align-items: center; padding: 1rem;">
+        <a href="/">
+            <img src="/images/Logo (2).webp" alt="Replica Logo" class="logo">
+        </a>
+        <div style="margin-left: auto;">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+        </div>
+    </nav>
     <main>
         {{ content }}
     </main>
     <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} My Blog</p>
+        <p>&copy; {{ site.time | date: '%Y' }} Replica AI</p>
     </footer>
 </body>
+
 </html>

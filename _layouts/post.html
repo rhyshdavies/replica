@@ -2,6 +2,60 @@
 layout: default
 ---
 
+<style>
+    body {
+        background-color: #000;
+        /* Dark background for the entire page */
+        font-family: Arial, sans-serif;
+        /* Common typography */
+        color: #fff;
+        /* White text color */
+        margin: 0;
+        /* Remove default margin */
+        padding: 20px;
+        /* Add some padding */
+    }
+
+    article {
+        background-color: #1a1a1a;
+        /* Dark background for the article */
+        border-radius: 8px;
+        /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        /* Subtle shadow */
+        padding: 20px;
+        /* Padding inside the article */
+        margin-bottom: 20px;
+        /* Space between articles */
+        max-width: 800px;
+        /* Limit the width of the article */
+        margin-left: auto;
+        /* Center the article */
+        margin-right: auto;
+        /* Center the article */
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #fff;
+        /* White headings */
+    }
+
+    footer {
+        background-color: #000;
+        /* Change footer background to black */
+        color: white;
+        /* White text */
+        text-align: center;
+        /* Centered text */
+        padding: 1rem;
+        /* Padding */
+        font-family: Arial, sans-serif;
+        /* Common typography */
+    }
+</style>
+
 <article>
     <h1>{{ page.title }}</h1>
     <p>By {{ page.author }} on {{ page.date | date: "%B %d, %Y" }}</p>
@@ -9,3 +63,8 @@ layout: default
         {{ content }}
     </div>
 </article>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Replica AI</p>
+</footer>
