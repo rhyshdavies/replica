@@ -1,2 +1,4 @@
 .D.DS_Store?
 ._*
+.jekyll-cache/
+_site/

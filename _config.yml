@@ -1,0 +1,45 @@
+# Site settings
+title: Replica AI
+description: Virtual Try-Ons That Transform E-Commerce
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Include/Exclude files/folders
+include:
+  - _posts
+  - images
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - npm-global
+  - CNAME
+  - bin
+  - lib
+  - .gitignore
+  - README.md
+
+# Keep files from being converted by Jekyll
+keep_files:
+  - images
+  - .git
+
+# Collections (if you add more content types later)
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Default settings for different types of content
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Replica AI Team"
