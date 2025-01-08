@@ -482,6 +482,54 @@
         a {
             color: #ffffff;
         }
+
+        /* Modernize navigation links */
+        .nav-link {
+            font-weight: 500;
+            /* Medium weight */
+            font-size: 1.2rem;
+            /* Larger size */
+            letter-spacing: 0.02em;
+            /* Slightly increase spacing */
+            text-decoration: none;
+            /* Remove underline */
+            color: #ffffff;
+            /* Ensure color is white */
+            transition: color 0.3s;
+            /* Smooth transition for hover */
+        }
+
+        .nav-link:hover {
+            color: #a78bfa;
+            /* Change color on hover */
+            text-decoration: underline;
+            /* Optional: underline on hover */
+        }
+
+        /* Modernize button */
+        .btn-demo {
+            font-weight: 500;
+            /* Medium weight */
+            font-size: 1.2rem;
+            /* Larger size */
+            letter-spacing: 0.02em;
+            /* Slightly increase spacing */
+            padding: 0.75rem 1.5rem;
+            /* Adjust padding */
+            border-radius: 0.5rem;
+            /* Rounded corners */
+            background-color: #7c3aed;
+            /* Background color */
+            color: #ffffff;
+            /* Text color */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover */
+        }
+
+        .btn-demo:hover {
+            background-color: #6d28d9;
+            /* Darker shade on hover */
+        }
     </style>
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
@@ -495,8 +543,8 @@
             <img src="images/Logo (2).webp" alt="Replica AI Logo" class="h-10" width="160" height="51">
         </div>
         <div class="space-x-6">
-            <a href="/about" class="hover:text-purple-500">About</a>
-            <a href="/blog" class="hover:text-purple-500">Blog</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/blog" class="nav-link">Blog</a>
         </div>
     </nav>
 
@@ -507,8 +555,7 @@
             <div class="space-y-6 lg:pt-20 lg:col-span-2">
                 <h1 class="text-6xl lg:text-8xl font-light">Replica AI</h1>
                 <p class="text-xl lg:text-2xl">Virtual Try-Ons That<br>Transform E-Commerce.</p>
-                <a href="https://calendly.com/rhys-hamilton-davies-yale/30min"
-                    class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full">
+                <a href="https://calendly.com/rhys-hamilton-davies-yale/30min" class="inline-block btn-demo">
                     Book a Demo
                 </a>
             </div>
