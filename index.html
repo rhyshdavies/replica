@@ -23,6 +23,10 @@
             width: 100%;
             margin: 0;
             overflow-y: scroll;
+            background-color: #000;
+            /* Dark background */
+            color: #fff;
+            /* White text */
         }
 
         /* Add these at the top of your existing styles */
@@ -548,6 +552,81 @@
             background-color: #6d28d9;
             /* Darker shade on hover */
         }
+
+        .video-container {
+            max-width: 100%;
+            /* Ensure it doesn't exceed the width of the container */
+            margin: 20px auto;
+            /* Center the video */
+            cursor: pointer;
+            /* Indicate clickable */
+        }
+
+        .video-container img {
+            width: 100%;
+            /* Thumbnail responsive */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1000;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            /* Center the modal */
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+            max-width: 800px;
+            /* Set a max width */
+        }
+
+        iframe {
+            width: 100%;
+            /* Make the iframe responsive */
+            height: 500px;
+            /* Set a fixed height */
+            border: none;
+            /* Remove border */
+        }
+
+        .close {
+            color: #aaa;
+            /* Close button color */
+            float: right;
+            /* Float right */
+            font-size: 28px;
+            /* Font size */
+            font-weight: bold;
+            /* Bold */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            /* Change color on hover */
+            text-decoration: none;
+            /* No underline */
+            cursor: pointer;
+            /* Pointer cursor */
+        }
     </style>
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
@@ -694,6 +773,14 @@
         </a>
     </section>
 
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <iframe src="YOUR_VIDEO_URL" allowfullscreen></iframe> <!-- Replace with your actual video URL -->
+        </div>
+    </div>
+
     <!-- Scripts at the end -->
     <script>
         function loadVideo() {
@@ -722,6 +809,34 @@
                 document.body.appendChild(script);
             }, 3000); // Load after 3 seconds
         });
+    </script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("videoModal");
+
+        // Get the thumbnail that opens the modal
+        var thumbnail = document.getElementById("videoThumbnail");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("closeModal");
+
+        // When the user clicks on the thumbnail, open the modal
+        thumbnail.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 
