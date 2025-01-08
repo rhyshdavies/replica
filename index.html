@@ -12,6 +12,19 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <style>
+        /* Fix for horizontal scrolling */
+        html {
+            overflow-x: hidden;
+        }
+
+        /* Keep your existing body styles */
+        body {
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
         /* Add these at the top of your existing styles */
         body {
             min-height: 100vh;
