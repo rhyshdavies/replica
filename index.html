@@ -565,60 +565,114 @@
         /* Modal styles */
         .modal {
             display: none;
-            /* Hidden by default */
             position: fixed;
-            /* Stay in place */
             z-index: 1000;
-            /* Sit on top */
             left: 0;
             top: 0;
             width: 100%;
-            /* Full width */
             height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.9);
-            /* Black w/ opacity */
+            background-color: rgba(0, 0, 0, 0.95);
         }
 
         .modal-content {
-            margin: 5% auto;
-            /* Center the modal */
-            width: 80%;
-            /* Could be more or less, depending on screen size */
-            max-width: 800px;
-            /* Set a max width */
+            background-color: #ffffff !important;
+            padding: 32px !important;
+            border-radius: 16px !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+            max-width: 500px !important;
+            width: 90% !important;
+            position: relative !important;
+            /* For close button positioning */
         }
 
-        iframe {
+        .modal h3 {
+            font-size: 24px !important;
+            font-weight: bold !important;
+            margin-bottom: 24px !important;
+        }
+
+        .modal label,
+        .modal p {
+            font-size: 16px !important;
+            margin-bottom: 8px !important;
+        }
+
+        .calculator-form label {
+            display: block;
+            color: #000000;
+            /* Black text */
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .calculator-form input {
             width: 100%;
-            /* Make the iframe responsive */
-            height: 500px;
-            /* Set a fixed height */
-            border: none;
-            /* Remove border */
+            padding: 1rem;
+            background-color: #FFFFFF;
+            /* White background */
+            border: 2px solid #5373FF;
+            border-radius: 0.5rem;
+            color: #000000;
+            /* Black text */
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-form input:focus {
+            outline: none;
+            border-color: #5373FF;
+            box-shadow: 0 0 0 3px rgba(83, 115, 255, 0.3);
+        }
+
+        .results {
+            background-color: #F5F7FF;
+            /* Light blue background */
+            border: 2px solid #5373FF;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .results p:first-child {
+            color: #000000;
+            /* Black text */
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .results p:last-child {
+            color: #5373FF;
+            /* Keep the result blue */
+            font-size: 2rem;
+            font-weight: bold;
         }
 
         .close {
-            color: #aaa;
-            /* Close button color */
-            float: right;
-            /* Float right */
-            font-size: 28px;
-            /* Font size */
-            font-weight: bold;
-            /* Bold */
+            position: absolute !important;
+            right: 16px !important;
+            top: 16px !important;
+            font-size: 24px !important;
+            color: #000000 !important;
+            cursor: pointer !important;
+            width: 24px !important;
+            height: 24px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 50% !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
         }
 
-        .close:hover,
-        .close:focus {
-            color: white;
-            /* Change color on hover */
-            text-decoration: none;
-            /* No underline */
-            cursor: pointer;
-            /* Pointer cursor */
+        .close:hover {
+            background-color: #f3f4f6 !important;
+        }
+
+        /* Placeholder styling */
+        .calculator-form input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black */
         }
 
         /* Companies/Brands section styles */
@@ -747,6 +801,278 @@
             text-decoration: none;
             color: #a78bfa;
         }
+
+        .benefit-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background: rgba(83, 115, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .benefit-card:hover {
+            background: rgba(83, 115, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #5373FF;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover .card-link {
+            color: #5373FF;
+        }
+
+        .benefit-card:hover .card-link::after {
+            transform: scaleX(1);
+        }
+
+        .card-link svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover .card-link svg {
+            transform: translateX(4px);
+        }
+
+        /* Update icon styles */
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: rgba(83, 115, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .icon-container svg {
+            width: 40px;
+            height: 40px;
+            color: #5373FF;
+        }
+
+        /* Keep other existing styles */
+        .benefit-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background: rgba(83, 115, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .benefit-card:hover {
+            background: rgba(83, 115, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        /* Update modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            margin: 1.5rem;
+            animation: modalSlide 0.3s ease-out;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Input focus styles */
+        input:focus {
+            outline: none;
+            border-color: #5373FF;
+            box-shadow: 0 0 0 3px rgba(83, 115, 255, 0.1);
+        }
+
+        /* ... rest of your styles ... */
+
+        .card-link {
+            color: #9ca3af;
+            /* Light gray color */
+            text-align: center;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .card-link {
+            color: #5373FF;
+            /* Change color on card hover */
+        }
+
+        /* Modal text colors */
+        .modal h3,
+        .modal label,
+        .modal span,
+        .modal p,
+        .modal input,
+        .modal-content {
+            color: #000000 !important;
+        }
+
+        /* Keep CTA button text white */
+        .modal .btn-demo {
+            color: #ffffff !important;
+        }
+
+        /* Input styling */
+        .modal input {
+            background-color: #ffffff !important;
+            border: 1px solid #cccccc !important;
+        }
+
+        /* Results text */
+        #convResult,
+        #convMonthly,
+        #retResult,
+        #retMonthly,
+        #aovResult,
+        #aovMonthly {
+            color: #000000 !important;
+        }
+
+        /* Make the Book a Demo text black and ensure the link is visible */
+        .modal-content a[href*="calendly"] {
+            color: #000000 !important;
+            text-decoration: underline !important;
+            font-weight: bold !important;
+        }
+
+        /* Modal styling */
+        .modal-content {
+            background-color: #ffffff !important;
+            padding: 32px !important;
+            border-radius: 16px !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+            max-width: 500px !important;
+            width: 90% !important;
+        }
+
+        /* Input field */
+        .modal input {
+            width: 100% !important;
+            padding: 16px 16px 16px 40px !important;
+            font-size: 18px !important;
+            border: 2px solid #E5E7EB !important;
+            border-radius: 8px !important;
+            margin-bottom: 24px !important;
+        }
+
+        /* Results container */
+        .results-container {
+            background-color: #F3F4F6 !important;
+            padding: 24px !important;
+            border-radius: 12px !important;
+            margin: 24px 0 !important;
+        }
+
+        /* Text styling */
+        .modal h3 {
+            font-size: 24px !important;
+            font-weight: bold !important;
+            margin-bottom: 24px !important;
+        }
+
+        .modal label,
+        .modal p {
+            font-size: 16px !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* CTA Button */
+        .modal-content a[href*="calendly"] {
+            display: block !important;
+            width: calc(100% - 48px) !important;
+            /* Account for modal padding */
+            padding: 16px 24px !important;
+            background-color: #5B6BFF !important;
+            color: #ffffff !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            text-align: center !important;
+            border-radius: 8px !important;
+            margin: 24px auto 0 !important;
+            text-decoration: none !important;
+        }
+
+        .modal-content a[href*="calendly"]:hover {
+            background-color: #4560DB !important;
+        }
+
+        /* Input wrapper and dollar sign styling */
+        .modal-content .input-wrapper {
+            position: relative !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .modal-content .dollar-sign {
+            position: absolute !important;
+            left: 16px !important;
+            top: calc(50% - 10px) !important;
+            /* Move up by 10px */
+            transform: translateY(-50%) !important;
+            color: #000000 !important;
+            font-size: 18px !important;
+            z-index: 1 !important;
+            line-height: 1 !important;
+        }
+
+        .modal-content input {
+            width: 100% !important;
+            padding: 16px 16px 16px 40px !important;
+            font-size: 18px !important;
+            border: 2px solid #E5E7EB !important;
+            border-radius: 8px !important;
+            margin-bottom: 24px !important;
+        }
+
+        /* Remove any remaining currency symbols */
+        .modal-content .currency-symbol,
+        .modal-content .input-wrapper::before {
+            display: none !important;
+        }
     </style>
     <link rel="preconnect" href="https://cdn.loom.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.loom.com">
@@ -777,7 +1103,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 p-4 lg:p-8">
             <div class="space-y-6 lg:col-span-2" style="margin-top: -20px;">
                 <h1 class="text-6xl lg:text-8xl font-bold">AI Virtual Try-On Technology</h1>
-                <p class="text-xl lg:text-2xl">Turn 30% More Browsers into Buyers</p>
+                <div style="margin-top: 24px;">
+                    <p class="text-xl lg:text-2xl">Turn 30% More Browsers into Buyers</p>
+                    <p class="text-lg lg:text-xl font-light" style="color: #E5E5E5; margin-top: 12px;">
+                        Reduce returns and increase sales with AI-powered fit visualization
+                    </p>
+                </div>
                 <a href="/demo" class="inline-block btn-demo">
                     See It In Action
                 </a>
@@ -790,7 +1121,8 @@
                     onclick="loadVideo()">
                     <img src="images/Thumbnail.webp" alt="Video thumbnail"
                         class="w-full h-full object-cover rounded-lg">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <div
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
                         <button id="playButton" style="
                             background: rgba(83, 115, 255, 0.9);
                             border: none;
@@ -803,11 +1135,13 @@
                             justify-content: center;
                             transition: all 0.3s ease;
                             transform: scale(1);
+                            margin-bottom: 15px;
                         ">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="#ffffff">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+                        <div style="color: white; font-size: 14px; opacity: 0.9;">Watch Demo</div>
                     </div>
                 </div>
             </div>
@@ -827,53 +1161,185 @@
 
     <!-- Why Use Virtual Try On Section -->
     <section class="py-16 lg:py-24 px-4 lg:px-8">
-        <h2 class="text-4xl lg:text-5xl text-center mb-4"
-            style="content-visibility: visible; contain-intrinsic-size: 0 60px;">
-            Why Use Virtual Try On?
-        </h2>
-        <p class="text-center text-gray-400 mb-16">
-            Fashion E-Commerce is booming, but is still often barely profitable.
+        <style>
+            .benefit-card {
+                padding: 2rem;
+                border-radius: 0.5rem;
+                background: rgba(83, 115, 255, 0.1);
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .benefit-card:hover {
+                background: rgba(83, 115, 255, 0.2);
+                transform: translateY(-4px);
+            }
+
+            .card-link {
+                display: inline-flex;
+                align-items: center;
+                color: #9ca3af;
+                transition: all 0.3s ease;
+            }
+
+            .card-link svg {
+                width: 16px;
+                height: 16px;
+                margin-left: 4px;
+                transition: transform 0.3s ease;
+            }
+
+            .card-link:hover {
+                color: #5373FF;
+            }
+
+            .card-link:hover svg {
+                transform: translateX(4px);
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.4);
+                padding-top: 60px;
+            }
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+
+        <h2 class="text-4xl lg:text-5xl text-center mb-4">Why Use Virtual Try On?</h2>
+        <p class="text-center text-gray-400 mb-16">Fashion E-Commerce is booming, but is still often barely profitable.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[2000px] mx-auto">
-            <div class="text-center space-y-4">
-                <div class="w-24 h-24 mx-auto bg-purple-600/10 rounded-full flex items-center justify-center">
-                    <svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Conversion Card -->
+            <div class="benefit-card">
+                <div
+                    class="icon-container bg-[#1A1B2E] rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-[#5373FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold">Increase Conversion</h3>
-                <p class="text-gray-400">Targeting a 0.5-1% increase in conversion</p>
+                <h3 class="text-xl font-semibold text-center mb-4">Increase Conversion Rate</h3>
+                <p class="text-xl text-white font-bold text-center mb-3">0.5% Uplift</p>
+                <p class="text-gray-400 text-center">$500K additional revenue per $50M in sales</p>
             </div>
 
-            <div class="text-center space-y-4">
-                <div class="w-24 h-24 mx-auto bg-purple-600/10 rounded-full flex items-center justify-center">
-                    <svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Returns Card -->
+            <div class="benefit-card">
+                <div
+                    class="icon-container bg-[#1A1B2E] rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-[#5373FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold">Reduce Returns</h3>
-                <p class="text-gray-400">Targeting a 3% decrease in returns</p>
+                <h3 class="text-xl font-semibold text-center mb-4">Reduce Returns</h3>
+                <p class="text-xl text-white font-bold text-center mb-3">3% Reduction</p>
+                <p class="text-gray-400 text-center">$150K savings in logistics costs per $50M in sales</p>
             </div>
 
-            <div class="text-center space-y-4">
-                <div class="w-24 h-24 mx-auto bg-purple-600/10 rounded-full flex items-center justify-center">
-                    <svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- AOV Card -->
+            <div class="benefit-card">
+                <div
+                    class="icon-container bg-[#1A1B2E] rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+                    <svg class="w-8 h-8 text-[#5373FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                         </path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold">Increase Average Order Value</h3>
-                <p class="text-gray-400">Show your consumers combinations of items to increase AOV</p>
+                <h3 class="text-xl font-semibold text-center mb-4">Increase AOV</h3>
+                <p class="text-xl text-white font-bold text-center mb-3">15% Increase</p>
+                <p class="text-gray-400 text-center">$7.5M additional revenue per $50M in sales</p>
             </div>
         </div>
-        <div class="text-center mt-12">
-            <a href="/demo" class="inline-block btn-demo">
-                See It In Action
-            </a>
+        <div class="benefit-card mt-12 p-8 max-w-4xl mx-auto">
+            <!-- Calculator Title -->
+            <h2 class="text-4xl font-bold text-center mb-8">Impact Calculator</h2>
+
+            <!-- Revenue Slider -->
+            <div class="space-y-4 mb-12">
+                <div class="text-center mb-4">
+                    <span class="text-gray-300 text-2xl">Annual E-commerce Revenue: </span>
+                    <span id="sliderValue" class="text-3xl font-bold text-white">$50,000,000</span>
+                </div>
+                <div class="relative">
+                    <input type="range" id="revenueSlider" min="1000000" max="1000000000" step="1000000"
+                        value="50000000" class="w-full h-2 bg-[#242642] rounded-lg appearance-none cursor-pointer">
+                </div>
+                <div class="flex justify-between text-lg text-gray-400 mt-2">
+                    <span>$1M</span>
+                    <span>$1B</span>
+                </div>
+            </div>
+
+            <!-- Impact Breakdown -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                <!-- Conversion Impact -->
+                <div class="text-center">
+                    <h5 class="text-gray-300 text-lg mb-1">Conversion Impact</h5>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 0.5% uplift</p>
+                    <div id="conversionImpact" class="text-2xl font-semibold text-[#5B6BFF]">$2,555,000</div>
+                </div>
+
+                <!-- Returns Impact -->
+                <div class="text-center">
+                    <h5 class="text-gray-300 text-lg mb-1">Returns Reduction</h5>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 3% savings</p>
+                    <div id="returnsImpact" class="text-2xl font-semibold text-[#5B6BFF]">$15,330,000</div>
+                </div>
+
+                <!-- AOV Impact -->
+                <div class="text-center">
+                    <h5 class="text-gray-300 text-lg mb-1">AOV Increase</h5>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 15% higher</p>
+                    <div id="aovImpact" class="text-2xl font-semibold text-[#5B6BFF]">$76,650,000</div>
+                </div>
+            </div>
+
+            <!-- Total Impact Display -->
+            <div class="text-center mb-12">
+                <h4 class="text-gray-400 text-2xl mb-2">Total Annual Impact</h4>
+                <div id="totalImpact" class="text-4xl font-bold text-white">$94,535,000</div>
+                <p class="text-gray-400 mt-2">Monthly Impact: <span id="monthlyImpact"
+                        class="text-[#5B6BFF]">$7,877,917</span></p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <a href="https://calendly.com/rhys-hamilton-davies-yale/30min" class="inline-block btn-demo">
+                    Book a Demo
+                </a>
+            </div>
         </div>
     </section>
 
@@ -989,7 +1455,86 @@
         }
     </script>
 
+    <!-- Add this script before the closing body tag -->
+    <script>
+        const slider = document.getElementById('revenueSlider');
+        const sliderValue = document.getElementById('sliderValue');
+        const impactElements = {
+            conversion: document.querySelectorAll('[id="conversionImpact"]'),
+            returns: document.querySelectorAll('[id="returnsImpact"]'),
+            aov: document.querySelectorAll('[id="aovImpact"]')
+        };
+        const totalImpact = document.getElementById('totalImpact');
+        const monthlyImpact = document.getElementById('monthlyImpact');
 
+        function formatCurrency(number) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        function updateCalculations() {
+            const revenue = parseFloat(slider.value);
+
+            // Calculate impacts
+            const convImpact = revenue * 0.005;  // 0.5% conversion uplift
+            const retImpact = revenue * 0.03;    // 3% returns reduction
+            const aovImpact = revenue * 0.15;    // 15% AOV increase
+
+            // Update all instances of each impact display
+            impactElements.conversion.forEach(el => el.textContent = formatCurrency(convImpact));
+            impactElements.returns.forEach(el => el.textContent = formatCurrency(retImpact));
+            impactElements.aov.forEach(el => el.textContent = formatCurrency(aovImpact));
+
+            // Update slider value and totals
+            sliderValue.textContent = formatCurrency(revenue);
+            const totalAnnual = convImpact + retImpact + aovImpact;
+            totalImpact.textContent = formatCurrency(totalAnnual);
+            monthlyImpact.textContent = formatCurrency(totalAnnual / 12);
+        }
+
+        // Add event listener and initial calculation
+        slider.addEventListener('input', updateCalculations);
+        updateCalculations();
+
+        // Modal handling
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.querySelector('.modal-content').style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.opacity = '0';
+            modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                const modals = document.getElementsByClassName('modal');
+                for (let modal of modals) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
 
     <footer>
         <p>&copy; 2025 Replica AI</p>
