@@ -1104,7 +1104,7 @@
             <div class="space-y-6 lg:col-span-2" style="margin-top: -20px;">
                 <h1 class="text-6xl lg:text-8xl font-bold">AI Virtual Dressing Room</h1>
                 <div style="margin-top: 24px;">
-                    <p class="text-xl lg:text-2xl">Turn 30% More Browsers into Buyers</p>
+                    <p class="text-xl lg:text-2xl">Turn 15% More Browsers into Buyers</p>
                     <p class="text-lg lg:text-xl font-light" style="color: #E5E5E5; margin-top: 12px;">
                         Reduce returns and increase sales with AI-powered fit visualization
                     </p>
@@ -1159,8 +1159,8 @@
         </div>
     </div>
 
-    <!-- Why Use Virtual Try On Section -->
-    <section class="py-16 lg:py-24 px-4 lg:px-8">
+    <!-- Why Use Virtual Try On Section with Calculator -->
+    <section class="py-16 lg:py-20 px-4 lg:px-8">
         <style>
             .benefit-card {
                 padding: 2rem;
@@ -1249,8 +1249,8 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-center mb-4">Increase Conversion Rate</h3>
-                <p class="text-xl text-white font-bold text-center mb-3">0.5% Uplift</p>
-                <p class="text-gray-400 text-center">$500K additional revenue per $50M in sales</p>
+                <p class="text-xl text-white font-bold text-center mb-3">15% Increase</p>
+                <p class="text-gray-400 text-center">$7.5M additional revenue per $50M in sales</p>
             </div>
 
             <!-- Returns Card -->
@@ -1263,7 +1263,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-center mb-4">Reduce Returns</h3>
-                <p class="text-xl text-white font-bold text-center mb-3">3% Reduction</p>
+                <p class="text-xl text-white font-bold text-center mb-3">10% Reduction</p>
                 <p class="text-gray-400 text-center">$150K savings in logistics costs per $50M in sales</p>
             </div>
 
@@ -1307,21 +1307,21 @@
                 <!-- Conversion Impact -->
                 <div class="text-center">
                     <h5 class="text-gray-300 text-lg mb-1">Conversion Impact</h5>
-                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 0.5% uplift</p>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 15% increase</p>
                     <div id="conversionImpact" class="text-2xl font-semibold text-[#5B6BFF]">$2,555,000</div>
                 </div>
 
                 <!-- Returns Impact -->
                 <div class="text-center">
                     <h5 class="text-gray-300 text-lg mb-1">Returns Reduction</h5>
-                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 3% savings</p>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 10% reduction</p>
                     <div id="returnsImpact" class="text-2xl font-semibold text-[#5B6BFF]">$15,330,000</div>
                 </div>
 
                 <!-- AOV Impact -->
                 <div class="text-center">
                     <h5 class="text-gray-300 text-lg mb-1">AOV Increase</h5>
-                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 15% higher</p>
+                    <p class="text-sm text-gray-400 mb-3">Replica's predicted outcome: 15% increase</p>
                     <div id="aovImpact" class="text-2xl font-semibold text-[#5B6BFF]">$76,650,000</div>
                 </div>
             </div>
@@ -1344,7 +1344,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="max-w-7xl mx-auto py-16 px-6 lg:px-12">
+    <section class="max-w-7xl mx-auto py-12 px-6 lg:px-12">
         <h2 class="text-4xl lg:text-5xl font-bold text-center mb-12">How It Works</h2>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- For Brands -->
@@ -1370,19 +1370,23 @@
             </div>
         </div>
 
-        <!-- Images Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div class="text-center mt-12">
+            <a href="/demo" class="inline-block btn-demo">
+                See It In Action
+            </a>
+        </div>
+    </section>
+
+    <!-- AI Examples Section -->
+    <section class="max-w-7xl mx-auto py-12 px-6 lg:px-12">
+        <h2 class="text-4xl lg:text-5xl font-bold text-center mb-12">AI Examples</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <img src="images/Rhys front full.webp" alt="Virtual try-on front view" class="w-full rounded-lg" width="800"
                 height="600" loading="lazy">
             <img src="images/Rhys front semi.webp" alt="Virtual try-on three-quarter view" class="w-full rounded-lg"
                 width="800" height="600" loading="lazy">
             <img src="images/Rhys Back.webp" alt="Virtual try-on back view" class="w-full rounded-lg" width="800"
                 height="600" loading="lazy">
-        </div>
-        <div class="text-center mt-12">
-            <a href="/demo" class="inline-block btn-demo">
-                See It In Action
-            </a>
         </div>
     </section>
 
@@ -1479,9 +1483,19 @@
         function updateCalculations() {
             const revenue = parseFloat(slider.value);
 
+            // Constants for returns calculation
+            const RETURNS_RATE = 0.30;           // 30% returns rate
+            const SHIPPING_COST_PER_RETURN = 10; // $10 per return
+            const AVERAGE_ORDER_VALUE = 100;     // $100 per order
+            const RETURNS_REDUCTION = 0.10;      // 10% reduction in returns
+
             // Calculate impacts
-            const convImpact = revenue * 0.005;  // 0.5% conversion uplift
-            const retImpact = revenue * 0.03;    // 3% returns reduction
+            const convImpact = revenue * 0.15;   // 15% conversion increase
+
+            // Calculate returns impact using the formula
+            const returnsLogisticsCost = revenue * (RETURNS_RATE * SHIPPING_COST_PER_RETURN / AVERAGE_ORDER_VALUE);
+            const retImpact = returnsLogisticsCost * RETURNS_REDUCTION;  // 10% reduction in returns costs
+
             const aovImpact = revenue * 0.15;    // 15% AOV increase
 
             // Update all instances of each impact display
@@ -1499,41 +1513,6 @@
         // Add event listener and initial calculation
         slider.addEventListener('input', updateCalculations);
         updateCalculations();
-
-        // Modal handling
-        function showModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                modal.querySelector('.modal-content').style.transform = 'scale(1)';
-            }, 10);
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.style.opacity = '0';
-            modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
-
-        // Close modal when clicking outside or pressing Escape
-        window.onclick = function (event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        };
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                const modals = document.getElementsByClassName('modal');
-                for (let modal of modals) {
-                    modal.style.display = 'none';
-                }
-            }
-        });
     </script>
 
     <footer>
