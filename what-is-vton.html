@@ -19,40 +19,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- JSON-LD: WebPage + DefinedTerm for "Virtual Try-On" entity -->
+  <!-- JSON-LD: WebPage + FAQPage for "Virtual Try-On" entity & definition questions -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "What is Virtual Try-On (VTON) Technology?",
-    "url": "https://replicaai.com/what-is-vton",
-    "description": "Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time, reducing e-commerce return rates by up to 30%.",
-    "about": {
-      "@type": "DefinedTerm",
-      "name": "Virtual Try-On",
-      "alternateName": ["VTON", "Virtual Try-On Technology", "AI Try-On"],
-      "description": "Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time. By simulating accurate fabric physics — drape, stretch, and fold — VTON enables shoppers to visualize clothing on themselves before purchasing, reducing e-commerce return rates by up to 30%.",
-      "inDefinedTermSet": {
-        "@type": "DefinedTermSet",
-        "name": "Fashion Technology Glossary"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://replicaai.com/what-is-vton#webpage",
+        "name": "What is Virtual Try-On (VTON) Technology?",
+        "url": "https://replicaai.com/what-is-vton",
+        "description": "Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time, reducing e-commerce return rates by up to 30%.",
+        "about": {
+          "@type": "DefinedTerm",
+          "name": "Virtual Try-On",
+          "alternateName": ["VTON", "Virtual Try-On Technology", "AI Try-On"],
+          "description": "Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time. By simulating accurate fabric physics — drape, stretch, and fold — VTON enables shoppers to visualize clothing on themselves before purchasing, reducing e-commerce return rates by up to 30%.",
+          "sameAs": "https://en.wikipedia.org/wiki/Virtual_try-on",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "Fashion Technology Glossary"
+          }
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["#vton-definition", ".vton-definition-lead"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://replicaai.com/" },
+            { "@type": "ListItem", "position": 2, "name": "What is VTON?", "item": "https://replicaai.com/what-is-vton" }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://replicaai.com/what-is-vton#faq",
+        "isPartOf": { "@id": "https://replicaai.com/what-is-vton#webpage" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does VTON work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The VTON pipeline operates in four stages. First, the AI detects the user's body pose and maps key anatomical landmarks. Second, the garment is segmented from a flat-lay or mannequin photo and its fabric properties (weight, stretch, opacity) are analyzed. Third, a Neural Radiance Field model simulates how the fabric drapes, folds, and moves on the detected body in 3D space. Finally, the system composites a photorealistic output image with matched lighting, shadows, and skin-garment boundary blending — all in under 3 seconds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does VTON matter for e-commerce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Online apparel returns cost retailers an estimated $40 billion annually, with 'didn't look as expected' cited in over 70% of cases. VTON addresses this directly by giving customers a realistic preview of how garments look on their body type before purchase. Brands using VTON report 22–30% reduction in return rates, 15% higher Average Order Value (AOV), and up to 31% conversion lift on product pages with try-on enabled."
+            }
+          }
+        ]
       }
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["#vton-definition", ".vton-definition-lead"]
-    },
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Virtual Try-On",
-      "sameAs": "https://en.wikipedia.org/wiki/Virtual_try-on"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://replicaai.com/" },
-        { "@type": "ListItem", "position": 2, "name": "What is VTON?", "item": "https://replicaai.com/what-is-vton" }
-      ]
-    }
+    ]
   }
   </script>
 </head>
