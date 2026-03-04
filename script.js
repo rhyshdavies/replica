@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile submenu toggle
+  document.querySelectorAll('.mobile-submenu-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+
   // Testimonials carousel
   const track = document.getElementById('testimonialsTrack');
   const prevBtn = document.getElementById('tnPrev');
