@@ -37,6 +37,47 @@ img {
   display: block;
 }
 
+/* ========== ANNOUNCEMENT BAR ========== */
+.announcement-bar {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 10px 48px;
+  font-size: 13px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.announcement-bar p {
+  margin: 0;
+}
+
+.announcement-bar a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.announcement-bar a:hover {
+  color: #555;
+}
+
+.announcement-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+  line-height: 1;
+}
+
+.announcement-close:hover {
+  color: #333;
+}
+
+.announcement-bar.hidden {
+  display: none;
+}
+
 /* ========== VTON DEFINITION SECTION ========== */
 .vton-definition-section {
   background: #f8f8f8;
@@ -129,6 +170,49 @@ img {
   max-width: 280px;
   height: auto;
   margin: 0 auto;
+}
+
+/* VTON dedicated page variant */
+.vton-page {
+  padding: 48px 32px 80px;
+}
+
+.vton-page h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.vton-page-h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  font-size: 13px;
+  color: #999;
+}
+
+.breadcrumb a {
+  color: #888;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #111;
+}
+
+.breadcrumb-sep {
+  margin: 0 6px;
+  color: #ccc;
 }
 
 /* ========== HEADER ========== */

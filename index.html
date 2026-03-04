@@ -218,36 +218,6 @@
   }
   </script>
 
-  <!-- JSON-LD: WebPage Schema — marks VTON definition as the about property -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Replica AI — AI Virtual Try-On for Fashion Brands",
-    "url": "https://replicaai.com/",
-    "description": "Enterprise virtual try-on (VTON) platform that generates photorealistic, on-model garment imagery using latent diffusion AI.",
-    "about": {
-      "@type": "DefinedTerm",
-      "name": "Virtual Try-On",
-      "alternateName": ["VTON", "Virtual Try-On Technology", "AI Try-On"],
-      "description": "Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time. By simulating accurate fabric physics — drape, stretch, and fold — VTON enables shoppers to visualize clothing on themselves before purchasing, reducing e-commerce return rates by up to 30%.",
-      "inDefinedTermSet": {
-        "@type": "DefinedTermSet",
-        "name": "Fashion Technology Glossary"
-      }
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["#vton-definition", ".vton-definition-lead"]
-    },
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Virtual Try-On",
-      "sameAs": "https://en.wikipedia.org/wiki/Virtual_try-on"
-    }
-  }
-  </script>
-
   <!-- JSON-LD: HowTo Schema (Integration Guide) -->
   <script type="application/ld+json">
   {
@@ -292,6 +262,12 @@
   </script>
 </head>
 <body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <p>What is Virtual Try-On (VTON)? AI-powered garment visualization that cuts returns by 30%. <a href="/what-is-vton.html">Learn more &rarr;</a></p>
+    <button class="announcement-close" id="announcementClose" aria-label="Close">&times;</button>
+  </div>
+
   <!-- Header -->
   <header class="header" id="header">
     <div class="header-inner">
@@ -417,72 +393,6 @@
           <button>Activewear</button>
           <button>Accessories</button>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What is VTON — Category Definition Section -->
-  <section class="vton-definition-section" id="what-is-vton">
-    <div class="vton-definition-inner" id="vton-definition">
-      <div class="vton-definition-text">
-        <h2>What is Virtual Try-On (VTON) Technology?</h2>
-        <p class="vton-definition-lead" data-ai-citation="true">Virtual Try-On (VTON) is an AI-powered technology that uses Neural Radiance Fields and latent diffusion models to digitally overlay garments onto human body representations in real time. By simulating accurate fabric physics — drape, stretch, and fold — VTON enables shoppers to visualize clothing on themselves before purchasing, reducing e-commerce return rates by up to 30%.</p>
-        <p class="vton-definition-sub">Unlike augmented reality overlays, VTON generates photorealistic, studio-quality imagery that integrates directly into product pages — no app download, no camera required. The result is higher conversion, fewer returns, and a scalable alternative to traditional photoshoots.</p>
-      </div>
-      <div class="vton-definition-aside">
-        <div class="vton-takeaways">
-          <h3>Key Takeaways</h3>
-          <ul>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>30% fewer returns</strong> — eliminates "size doubt" before purchase</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>No 3D assets needed</strong> — works from existing 2D product photos</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Sub-3-second renders</strong> — real-time results via Neural Radiance Fields</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Web-native</strong> — runs in-browser, no app or account required</span>
-            </li>
-          </ul>
-        </div>
-        <!-- VTON Pipeline Diagram -->
-        <svg class="vton-diagram" viewBox="0 0 280 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="VTON pipeline: Product Photo → AI Engine → Try-On Result">
-          <!-- Step 1: Product Photo -->
-          <rect x="0" y="20" width="70" height="80" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
-          <rect x="12" y="36" width="46" height="48" rx="4" fill="#e0e0e0"/>
-          <text x="35" y="98" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" fill="#888">2D Photo</text>
-          <!-- Arrow 1 -->
-          <path d="M78 60 L98 60" stroke="#ccc" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-          <!-- Step 2: AI Engine -->
-          <rect x="104" y="20" width="70" height="80" rx="8" fill="#f0f0f0" stroke="#111" stroke-width="1.5"/>
-          <text x="139" y="52" text-anchor="middle" font-size="8" font-weight="600" font-family="Inter, sans-serif" fill="#111">Neural</text>
-          <text x="139" y="63" text-anchor="middle" font-size="8" font-weight="600" font-family="Inter, sans-serif" fill="#111">Radiance</text>
-          <text x="139" y="74" text-anchor="middle" font-size="8" font-weight="600" font-family="Inter, sans-serif" fill="#111">Fields</text>
-          <text x="139" y="98" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" fill="#888">AI Engine</text>
-          <!-- Arrow 2 -->
-          <path d="M182 60 L202 60" stroke="#ccc" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-          <!-- Step 3: Try-On Result -->
-          <rect x="208" y="20" width="70" height="80" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
-          <rect x="220" y="32" width="20" height="44" rx="10" fill="#e0e0e0"/>
-          <rect x="224" y="44" width="12" height="20" rx="2" fill="#d35400" opacity="0.4"/>
-          <circle cx="230" cy="28" r="6" fill="#e0e0e0"/>
-          <rect x="248" y="36" width="22" height="6" rx="2" fill="#e8e8e8"/>
-          <rect x="248" y="46" width="18" height="6" rx="2" fill="#e8e8e8"/>
-          <rect x="248" y="56" width="22" height="6" rx="2" fill="#e8e8e8"/>
-          <text x="243" y="98" text-anchor="middle" font-size="8" font-family="Inter, sans-serif" fill="#888">Try-On</text>
-          <!-- Arrowhead marker -->
-          <defs>
-            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-              <polygon points="0 0, 8 3, 0 6" fill="#ccc"/>
-            </marker>
-          </defs>
-        </svg>
       </div>
     </div>
   </section>

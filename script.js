@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Announcement bar close
+  const announcementBar = document.getElementById('announcementBar');
+  const announcementClose = document.getElementById('announcementClose');
+  if (announcementClose) {
+    announcementClose.addEventListener('click', () => {
+      announcementBar.classList.add('hidden');
+    });
+  }
+
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -68,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   const animatedSections = [
-    '.vton-definition-section',
     '.trust-bar',
     '.showcase',
     '.features',
