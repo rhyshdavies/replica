@@ -2072,11 +2072,11 @@ td strong {
 /* ========== PRICING SECTION ========== */
 .pricing-section {
   background: #fafafa;
-  padding: 80px 32px;
+  padding: 120px 32px;
 }
 
 .pricing-inner {
-  max-width: 1200px;
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
@@ -2196,18 +2196,56 @@ td strong {
   font-weight: 600;
 }
 
+.pricing-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888;
+  margin-bottom: 16px;
+}
+
 .pricing-hero-desc {
   font-size: 18px;
   color: #555;
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto 32px;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 16px auto 40px;
+}
+
+.pricing-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.pricing-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+.pricing-highlight svg {
+  color: #111;
+  flex-shrink: 0;
 }
 
 .pricing-hero-cta {
   display: inline-block;
-  padding: 14px 36px;
+  padding: 16px 40px;
   font-size: 16px;
+  font-weight: 600;
+}
+
+.pricing-subtext {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #999;
 }
 
 /* ========== RESPONSIVE: NEW SECTIONS ========== */
@@ -2248,6 +2286,12 @@ td strong {
 
   .fm-browsers {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-highlights {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
   }
 }
 
