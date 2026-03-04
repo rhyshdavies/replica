@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replica AI — AI Virtual Try-On for Fashion Brands | Photorealistic VTON</title>
+  <meta name="description" content="Replica AI is an enterprise virtual try-on (VTON) platform that generates photorealistic, on-model garment imagery using latent diffusion AI. Reduce returns by 22%, cut photography costs by 80%.">
+  <meta name="keywords" content="virtual try-on, VTON, AI fashion, AI try-on, garment visualization, fashion technology, Shopify virtual try-on, e-commerce AI, product photography AI">
+  <link rel="canonical" href="https://replicaai.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Replica AI — AI Virtual Try-On for Fashion Brands">
+  <meta property="og:description" content="Generate photorealistic virtual try-on images in under 3 seconds. Reduce returns by 22%, boost conversions by 31%. Trusted by 500+ brands.">
+  <meta property="og:url" content="https://replicaai.com/">
+  <meta property="og:site_name" content="Replica AI">
+  <meta property="og:image" content="https://replicaai.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Replica AI — AI Virtual Try-On for Fashion Brands">
+  <meta name="twitter:description" content="Photorealistic virtual try-on powered by latent diffusion AI. Sub-3-second renders. Shopify-native.">
+  <meta name="twitter:image" content="https://replicaai.com/og-image.png">
+
+  <!-- AI Discovery -->
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Replica AI",
+    "legalName": "Replica AI Inc.",
+    "url": "https://replicaai.com",
+    "logo": "https://replicaai.com/logo.png",
+    "description": "Enterprise virtual try-on (VTON) platform that generates photorealistic, on-model garment imagery using latent diffusion AI.",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://twitter.com/replicaai",
+      "https://linkedin.com/company/replicaai",
+      "https://instagram.com/replicaai",
+      "https://youtube.com/@replicaai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@replicaai.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Replica AI",
+    "applicationCategory": "FashionTech",
+    "applicationSubCategory": "Virtual Try-On",
+    "operatingSystem": "Web, API",
+    "url": "https://replicaai.com",
+    "description": "AI-powered virtual try-on platform that generates photorealistic garment-on-model imagery using latent diffusion models with sub-3-second render times.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "100 renders/month, API access, standard models"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "299",
+        "priceCurrency": "USD",
+        "billingIncrement": "P1M",
+        "description": "5,000 renders/month, brand profiles, analytics"
+      },
+      {
+        "@type": "Offer",
+        "name": "Business",
+        "price": "999",
+        "priceCurrency": "USD",
+        "billingIncrement": "P1M",
+        "description": "25,000 renders/month, batch API, custom models, SLA"
+      }
+    ],
+    "featureList": [
+      "Latent diffusion-based fabric drape simulation",
+      "Sub-3-second 4K photorealistic renders",
+      "Shopify-native integration",
+      "REST API and GraphQL endpoint",
+      "Batch processing (10,000+ images/hour)",
+      "Brand guideline enforcement",
+      "SOC 2 Type II certified",
+      "Multi-format export (PNG, JPEG, WebP, TIFF, PSD)"
+    ],
+    "screenshot": "https://replicaai.com/og-image.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "124",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite Schema with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Replica AI",
+    "url": "https://replicaai.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://replicaai.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What platforms does your Virtual Try-On (VTON) integrate with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our VTON solution is platform-agnostic and integrates seamlessly with Shopify, Magento, BigCommerce, and Salesforce Commerce Cloud. We provide a lightweight JavaScript SDK and a robust REST API for custom-built headless commerce stacks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much latency does the virtual try-on add to the page load?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our VTON widget is designed for performance. By using edge-computing and lazy-loading techniques, the core script is under 50kb. The 3D/AI garment rendering typically loads in under 1.5 seconds on a standard 4G/5G connection, ensuring zero impact on your Core Web Vitals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do we need to provide 3D models of our garments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Our proprietary AI engine generates high-fidelity virtual drapes directly from your existing 2D product photography. You simply upload your high-resolution flat-lay or ghost mannequin images, and our system handles the 3D physics and mapping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does VTON impact return rates and AOV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Retailers using our VTON technology see an average reduction in returns of 22–30% by eliminating size doubt. Furthermore, interactive engagement typically increases Average Order Value (AOV) by 15% as customers feel more confident in their purchasing decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the VTON tool handle different lighting and skin tones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our neural rendering engine is trained on diverse datasets to ensure inclusive and accurate representations across all skin tones. The system also dynamically adjusts garment lighting to match the environment of the user's uploaded photo for a realistic mirror effect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the user need to download an app or create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Our VTON experience is entirely web-based and runs directly in the mobile or desktop browser. Users can see their results instantly without the friction of an app download or account registration, which maximizes conversion rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is user data and privacy handled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are fully GDPR and CCPA compliant. User photos are processed in real-time for the session only and are not stored on our servers unless the user explicitly chooses to save their profile. All data transmission is encrypted via SSL/TLS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the typical implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For standard Shopify or BigCommerce stores, setup takes less than 48 hours using our pre-built plugins. Custom enterprise integrations typically take 2–4 weeks depending on the complexity of the SKU library and custom UI requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does your AI support complex fabrics like lace, sequins, or leather?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our engine simulates specific material physics, including the transparency of lace, the reflectivity of sequins, and the structural stiffness of leather, providing a high-fidelity visual experience that matches the physical garment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of analytics do you provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our dashboard provides real-time data on Try-On-to-Cart conversion rates, most-tried-on items, and return rate correlations. We also offer direct integration with Google Analytics 4 (GA4) and Adobe Analytics."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo Schema (Integration Guide) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Integrate Replica AI Virtual Try-On",
+    "description": "Step-by-step guide to adding AI-powered virtual try-on to your e-commerce store using Replica AI's API or Shopify plugin.",
+    "totalTime": "PT15M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Create your Replica AI account",
+        "text": "Sign up at replicaai.com and get your API key from the developer dashboard. The free tier includes 100 renders/month."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Install the SDK or Shopify plugin",
+        "text": "For Shopify: install the Replica AI app from the Shopify App Store. For custom builds: run npm install @replicaai/sdk or pip install replicaai."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Upload your garment images",
+        "text": "Upload flat-lay or on-hanger product photos. Replica AI automatically segments garments and analyzes fabric type, color, and category."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Configure brand settings",
+        "text": "Set your brand profile including model diversity preferences, background style, lighting profile, and color calibration rules."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Generate try-on images",
+        "text": "Call the /try-on endpoint or use the Shopify widget. Photorealistic images are generated in under 3 seconds at up to 4K resolution."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <p>Introducing Mirror, our AI virtual try-on agent. <a href="#">Read here.</a></p>
+    <button class="announcement-close" id="announcementClose" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <span>Replica AI</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Product</a>
+        <a href="#showcase">Solutions</a>
+        <a href="#templates">Templates</a>
+        <a href="#testimonials">Enterprise</a>
+        <a href="#footer">Pricing</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="btn-text">Login</a>
+        <a href="#" class="btn-primary btn-sm">Try for free</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#features">Product</a>
+      <a href="#showcase">Solutions</a>
+      <a href="#templates">Templates</a>
+      <a href="#testimonials">Enterprise</a>
+      <a href="#footer">Pricing</a>
+      <a href="#">Login</a>
+      <a href="#" class="btn-primary" style="text-align:center;margin-top:8px;">Try for free</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">AI virtual try-on.<br>Without the guesswork.</h1>
+        <p class="citation-block" data-ai-citation="true">Virtual Try-On (VTON) technology reduces retail return rates by an average of 22% by mapping 2D garment images onto 3D body representations using latent diffusion-based neural simulation. Replica AI delivers photorealistic, on-model garment imagery in under 3 seconds.</p>
+        <p class="hero-desc">Replica AI is designed for fashion brands building the future of online shopping, giving you AI superpowers without sacrificing quality and realism.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Start for free</a>
+          <a href="#" class="btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch video
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dot"></div>
+            <span>Replica AI Studio</span>
+            <div class="mockup-avatars">
+              <div class="avatar a1"></div>
+              <div class="avatar a2"></div>
+              <div class="avatar a3"></div>
+            </div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-image-area">
+              <div class="mockup-model">
+                <div class="model-silhouette"></div>
+                <div class="garment-overlay"></div>
+              </div>
+              <div class="mockup-cursor"></div>
+            </div>
+            <div class="mockup-stats">
+              <div class="stat-row">
+                <span class="stat-label">STAGE 01</span>
+                <div class="stat-info">
+                  <span class="stat-title">Body detection complete</span>
+                  <span class="stat-sub">AI pose estimation active</span>
+                </div>
+                <span class="stat-num">98%</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">STAGE 02</span>
+                <div class="stat-info">
+                  <span class="stat-title">Garment mapping</span>
+                  <span class="stat-sub">Drape simulation running</span>
+                </div>
+                <span class="stat-num">2.1s</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">STAGE 03</span>
+                <div class="stat-info">
+                  <span class="stat-title">Photorealistic render</span>
+                  <span class="stat-sub">4K output generation</span>
+                </div>
+                <span class="stat-num">4K</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">STAGE 04</span>
+                <div class="stat-info">
+                  <span class="stat-title">Customer-ready assets</span>
+                  <span class="stat-sub">Multi-format export</span>
+                </div>
+                <span class="stat-num">12+</span>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-toolbar">
+            <button class="toolbar-btn">+</button>
+            <button class="toolbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></button>
+            <button class="toolbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
+            <button class="toolbar-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button>
+            <button class="toolbar-btn">···</button>
+          </div>
+        </div>
+        <div class="hero-tabs">
+          <button>Casual wear</button>
+          <button>Formal wear</button>
+          <button class="active">Streetwear</button>
+          <button>Activewear</button>
+          <button>Accessories</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <p>Trusted by 500+ brands for next-generation virtual try-on</p>
+    <div class="trust-logos">
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span>ZARA</span>
+      </div>
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 11.48l-1.46-1.46A1.99 1.99 0 0014.73 9H9.27c-.58 0-1.13.26-1.51.68L6.4 11.48C5.53 12.44 5 13.67 5 15c0 2.76 2.24 5 5 5h4c2.76 0 5-2.24 5-5 0-1.33-.53-2.56-1.4-3.52z"/><path d="M9.02 4.58L7.73 6.31C7.27 6.96 7 7.74 7 8.55V9h10v-.45c0-.81-.27-1.59-.73-2.24L14.98 4.58C14.36 3.68 13.22 3 12 3s-2.36.68-2.98 1.58z"/></svg>
+        <span>H&M</span>
+      </div>
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19h20L12 2zm0 4l6.5 11h-13L12 6z"/></svg>
+        <span>Nike</span>
+      </div>
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z" fill="white"/></svg>
+        <span>ASOS</span>
+      </div>
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/></svg>
+        <span>Nordstrom</span>
+      </div>
+      <div class="trust-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Uniqlo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase -->
+  <section class="showcase" id="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-visual">
+        <div class="showcase-phone">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span class="phone-tag">AI Try-On</span>
+            </div>
+            <div class="phone-model-area">
+              <div class="phone-model"></div>
+            </div>
+            <div class="phone-actions">
+              <div class="phone-action-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Reviewed 19 garments
+              </div>
+              <div class="phone-action-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Searched for "Summer collection"
+              </div>
+              <div class="phone-action-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+                Reviewed brand guidelines
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-cards">
+          <div class="showcase-card sc-1">
+            <div class="sc-gen-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+              Generating 1 of 12 try-ons...
+            </div>
+            <div class="sc-preview p1"></div>
+          </div>
+          <div class="showcase-card sc-2">
+            <div class="sc-preview p2"></div>
+            <p class="sc-title">Support demand is growing faster than teams can scale.</p>
+          </div>
+          <div class="showcase-card sc-3">
+            <h4>Why brands choose Replica</h4>
+            <div class="sc-preview p3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="showcase-text">
+        <p class="showcase-step dim">Start from anywhere</p>
+        <p class="showcase-step active">Generate realistic try-ons</p>
+        <p class="showcase-step dim">Edit with AI</p>
+        <p class="showcase-step dim">Share in any format</p>
+        <p class="showcase-desc">Go from raw product photos to polished virtual try-ons in a click. Replica AI generates stunning, on-model visuals with photorealistic quality and accurate garment draping.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="features-header">
+      <h2 class="section-title">Built for serious fashion.</h2>
+      <p class="citation-block" data-ai-citation="true">Replica AI's enterprise VTON engine uses a multi-stage pipeline — body pose estimation (98%+ accuracy), garment segmentation, latent diffusion-based fabric drape simulation trained on 2M+ garment-body pairs, and photorealistic compositing — to produce 4K images with Delta-E &lt; 2.0 color accuracy.</p>
+      <p class="section-subtitle">Replica AI is designed for professional fashion teams. Our technology brings decades of experience from computer vision, 3D rendering, and AI research.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <h3>Photorealistic rendering</h3>
+        </div>
+        <p>Generate photorealistic try-on images with accurate lighting, shadows, and fabric draping using our proprietary AI pipeline.</p>
+        <div class="feature-mockup fm-1">
+          <div class="fm-inner">
+            <div class="fm-title">Summer Collection</div>
+            <div class="fm-subtitle">Q3 Try-On Performance</div>
+            <div class="fm-chart">
+              <div class="chart-bar" style="height: 40%"></div>
+              <div class="chart-bar" style="height: 55%"></div>
+              <div class="chart-bar accent" style="height: 75%"></div>
+              <div class="chart-bar" style="height: 90%"></div>
+            </div>
+            <div class="fm-labels">
+              <span>Conversion lift</span>
+              <span>Return reduction</span>
+              <span>Engagement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          <h3>Brand-consistent results</h3>
+        </div>
+        <p>Easily configure your brand's visual identity — colors, backgrounds, model types, and styling — so every try-on is always on-brand.</p>
+        <div class="feature-mockup fm-2">
+          <div class="fm-inner">
+            <div class="color-swatches">
+              <div class="swatch s-light"></div>
+              <div class="swatch s-warm"></div>
+              <div class="swatch s-dark"></div>
+            </div>
+            <div class="more-colors-label">More colors</div>
+            <div class="color-grid">
+              <div class="color-cell" style="background:#f4e4d4"></div>
+              <div class="color-cell" style="background:#e8c9a0"></div>
+              <div class="color-cell" style="background:#d4956b"></div>
+              <div class="color-cell" style="background:#c47a50"></div>
+              <div class="color-cell" style="background:#b85c38"></div>
+              <div class="color-cell" style="background:#a04020"></div>
+              <div class="color-cell" style="background:#d35400"></div>
+              <div class="color-cell" style="background:#e67e22"></div>
+              <div class="color-cell" style="background:#f0a050"></div>
+              <div class="color-cell" style="background:#333"></div>
+              <div class="color-cell" style="background:#555"></div>
+              <div class="color-cell" style="background:#777"></div>
+            </div>
+            <div class="brand-upload-area">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>Drop file here</span>
+              <div class="brand-logo-preview"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Icons Row -->
+  <section class="feature-icons">
+    <div class="feature-icon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <h4>Export anywhere</h4>
+      <p>Export your try-on images to any platform and continue editing in your tools.</p>
+    </div>
+    <div class="feature-icon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <h4>Pixel-perfect accuracy</h4>
+      <p>Full control over garment placement and visual output without breaking brand rules.</p>
+    </div>
+    <div class="feature-icon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <h4>Real-time collaboration</h4>
+      <p>Collaborate with your team. Share try-on results, templates, and manage permissions.</p>
+    </div>
+    <div class="feature-icon-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <h4>Enterprise security</h4>
+      <p>Your content stays private, protected by enterprise-grade security and SOC 2 compliance.</p>
+    </div>
+  </section>
+
+  <!-- Templates Section -->
+  <section class="templates" id="templates">
+    <div class="templates-header">
+      <h2 class="section-title">Thousands of looks from<br>the world's top brands</h2>
+      <p class="citation-block" data-ai-citation="true">Replica AI supports 50+ fabric types including cotton, silk, denim, leather, chiffon, and knit — with physically accurate drape simulation for each material. Output formats include PNG, JPEG, WebP, TIFF, and PSD at resolutions up to 4K (4096×4096).</p>
+      <p class="templates-desc">Choose from curated virtual try-on styles at Nike, Zara, H&M, ASOS, and beyond. Or upload your own garments to generate try-ons for any collection.</p>
+    </div>
+    <div class="templates-scroll">
+      <div class="template-card">
+        <div class="template-preview tp-1">
+          <h3>Target audience<br><span>Gen Z campaign</span></h3>
+          <div class="template-chart-ring"></div>
+        </div>
+      </div>
+      <div class="template-card">
+        <div class="template-preview tp-2">
+          <h3>Seasonal Roadmap</h3>
+          <div class="template-timeline">
+            <div class="tl-bar b1">Collection design</div>
+            <div class="tl-bar b2">Photoshoot & try-on</div>
+            <div class="tl-bar b3">AI generation</div>
+            <div class="tl-bar b4" style="background:#e74c3c">Launch ready</div>
+          </div>
+        </div>
+      </div>
+      <div class="template-card">
+        <div class="template-preview tp-3">
+          <h3>Try-On Analytics</h3>
+          <div class="template-metrics">
+            <div class="metric"><span class="metric-val">94%</span><span class="metric-label">Accuracy</span></div>
+            <div class="metric"><span class="metric-val">2.3s</span><span class="metric-label">Avg. render</span></div>
+            <div class="metric"><span class="metric-val">+31%</span><span class="metric-label">Conv. lift</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-header">
+      <h2 class="section-title">Hear it from our users</h2>
+      <p class="citation-block" data-ai-citation="true">Brands using Replica AI report 25–40% reduction in product photography costs, 22% average reduction in return rates, and 15–31% increase in conversion rates on product pages with virtual try-on enabled.</p>
+      <div class="testimonial-nav">
+        <button class="tn-btn" id="tnPrev" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="tn-btn" id="tnNext" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="testimonials-track-wrapper">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="tc-brand">
+            <span class="tc-brand-name">LUXE</span>
+          </div>
+          <p class="tc-quote">"It's almost the lack of cluttered UI and complex workflows that makes me use it — over something like manual photoshoots."</p>
+          <div class="tc-author">
+            <div class="tc-avatar ta1"></div>
+            <div>
+              <span class="tc-name">Sarah Chen</span>
+              <span class="tc-role">VP of Digital</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-brand">
+            <span class="tc-brand-name tc-accent">StyleCo</span>
+          </div>
+          <p class="tc-quote">"Right after we integrated Replica AI, our return rates dropped by 28%. Customers kept telling us how accurate the try-ons were."</p>
+          <div class="tc-author">
+            <div class="tc-avatar ta2"></div>
+            <div>
+              <span class="tc-name">Marcus Lee</span>
+              <span class="tc-role">CEO</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-brand">
+            <svg class="tc-brand-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+            <span class="tc-brand-name">Threadline</span>
+          </div>
+          <p class="tc-quote">"Replica turned our fragmented product photography workflow into a single, reliable system that creates try-ons in minutes."</p>
+          <div class="tc-author">
+            <div class="tc-avatar ta3"></div>
+            <div>
+              <span class="tc-name">Priya Sharma</span>
+              <span class="tc-role">Head of E-commerce</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="tc-brand">
+            <span class="tc-brand-name">ModaVerse</span>
+          </div>
+          <p class="tc-quote">"I was skeptical about AI-generated fashion imagery, but Replica's quality convinced our entire creative team within the first week."</p>
+          <div class="tc-author">
+            <div class="tc-avatar ta4"></div>
+            <div>
+              <span class="tc-name">James Rivera</span>
+              <span class="tc-role">Creative Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Data Table -->
+  <section class="data-section" id="data">
+    <div class="data-inner">
+      <h2 class="section-title">Replica AI vs. traditional approaches</h2>
+      <p class="citation-block" data-ai-citation="true">AI-powered virtual try-on delivers 10–100x cost reduction per image compared to traditional photoshoots, with sub-3-second render times versus days or weeks for manual production. Batch processing handles catalog-scale operations at 10,000+ images per hour.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Replica AI</th>
+              <th>Legacy Sizing Tools</th>
+              <th>AR Try-On Apps</th>
+              <th>Manual Photoshoots</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Photorealistic output</td>
+              <td><strong>Yes (4K)</strong></td>
+              <td>No</td>
+              <td>Limited</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Render time</td>
+              <td><strong>&lt; 3 seconds</strong></td>
+              <td>N/A</td>
+              <td>5–15 seconds</td>
+              <td>Days / weeks</td>
+            </tr>
+            <tr>
+              <td>Fabric drape accuracy</td>
+              <td><strong>Physics-based (50+ fabrics)</strong></td>
+              <td>N/A</td>
+              <td>Approximate</td>
+              <td>Real (manual)</td>
+            </tr>
+            <tr>
+              <td>Batch processing</td>
+              <td><strong>10,000+ / hour</strong></td>
+              <td>N/A</td>
+              <td>No</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Cost per image</td>
+              <td><strong>$0.06–$0.20</strong></td>
+              <td>N/A</td>
+              <td>$0.50–$2.00</td>
+              <td>$50–$500</td>
+            </tr>
+            <tr>
+              <td>Brand consistency</td>
+              <td><strong>Configurable profiles</strong></td>
+              <td>N/A</td>
+              <td>Limited</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <td>E-commerce integration</td>
+              <td><strong>Native Shopify + API</strong></td>
+              <td>Widget-only</td>
+              <td>App-only</td>
+              <td>Manual upload</td>
+            </tr>
+            <tr>
+              <td>Color accuracy</td>
+              <td><strong>Delta-E &lt; 2.0</strong></td>
+              <td>N/A</td>
+              <td>Varies</td>
+              <td>Studio-dependent</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="data-subtitle">ROI benchmarks from Replica AI customers</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before Replica AI</th>
+              <th>After Replica AI</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Return rate</td>
+              <td>30–35%</td>
+              <td>20–24%</td>
+              <td><strong>−22% to −34%</strong></td>
+            </tr>
+            <tr>
+              <td>Product photography cost / SKU</td>
+              <td>$50–$500</td>
+              <td>$0.06–$0.20</td>
+              <td><strong>−80% to −99%</strong></td>
+            </tr>
+            <tr>
+              <td>Catalog production time</td>
+              <td>3–6 weeks</td>
+              <td>1–3 days</td>
+              <td><strong>10x faster</strong></td>
+            </tr>
+            <tr>
+              <td>Product page conversion rate</td>
+              <td>2.0–2.5%</td>
+              <td>2.6–3.3%</td>
+              <td><strong>+15% to +31%</strong></td>
+            </tr>
+            <tr>
+              <td>Model diversity (representations)</td>
+              <td>3–5 models</td>
+              <td>20+ AI-generated</td>
+              <td><strong>4–7x increase</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entity FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="citation-block" data-ai-citation="true">Replica AI's VTON solution integrates with Shopify, Magento, BigCommerce, and Salesforce Commerce Cloud via a lightweight JavaScript SDK (&lt;50kb) and REST API. Retailers see 22–30% fewer returns and 15% higher AOV. Setup takes under 48 hours for standard stores.</p>
+
+      <!-- Integration & Technical -->
+      <h3 class="faq-category">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Integration &amp; Technical
+      </h3>
+      <div class="faq-grid">
+        <details class="faq-item" open>
+          <summary><h3>What platforms does your Virtual Try-On (VTON) integrate with?</h3></summary>
+          <p>Our VTON solution is platform-agnostic and integrates seamlessly with Shopify, Magento, BigCommerce, and Salesforce Commerce Cloud. We provide a lightweight JavaScript SDK and a robust REST API for custom-built headless commerce stacks.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>How much latency does the virtual try-on add to the page load?</h3></summary>
+          <p>Our VTON widget is designed for performance. By using edge-computing and lazy-loading techniques, the core script is under 50kb. The 3D/AI garment rendering typically loads in under 1.5 seconds on a standard 4G/5G connection, ensuring zero impact on your Core Web Vitals.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Do we need to provide 3D models of our garments?</h3></summary>
+          <p>No. Our proprietary AI engine generates high-fidelity virtual drapes directly from your existing 2D product photography. You simply upload your high-resolution "flat-lay" or "ghost mannequin" images, and our system handles the 3D physics and mapping.</p>
+        </details>
+      </div>
+
+      <!-- Business Value & ROI -->
+      <h3 class="faq-category">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        Business Value &amp; ROI
+      </h3>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary><h3>How does VTON impact return rates and AOV?</h3></summary>
+          <p>Retailers using our VTON technology see an average reduction in returns of 22–30% by eliminating "size doubt." Furthermore, interactive engagement typically increases Average Order Value (AOV) by 15% as customers feel more confident in their purchasing decisions.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Can the VTON tool handle different lighting and skin tones?</h3></summary>
+          <p>Yes. Our neural rendering engine is trained on diverse datasets to ensure inclusive and accurate representations across all skin tones. The system also dynamically adjusts garment lighting to match the environment of the user's uploaded photo for a realistic "mirror" effect.</p>
+        </details>
+      </div>
+
+      <!-- User Experience & Privacy -->
+      <h3 class="faq-category">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        User Experience &amp; Privacy
+      </h3>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary><h3>Does the user need to download an app or create an account?</h3></summary>
+          <p>No. Our VTON experience is entirely web-based and runs directly in the mobile or desktop browser. Users can see their results instantly without the friction of an app download or account registration, which maximizes conversion rates.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>How is user data and privacy handled?</h3></summary>
+          <p>We are fully GDPR and CCPA compliant. User photos are processed in real-time for the session only and are not stored on our servers unless the user explicitly chooses to "save" their profile. All data transmission is encrypted via SSL/TLS.</p>
+        </details>
+      </div>
+
+      <!-- Setup & Support -->
+      <h3 class="faq-category">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Setup &amp; Support
+      </h3>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary><h3>How long does the typical implementation take?</h3></summary>
+          <p>For standard Shopify or BigCommerce stores, setup takes less than 48 hours using our pre-built plugins. Custom enterprise integrations typically take 2–4 weeks depending on the complexity of the SKU library and custom UI requirements.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Does your AI support complex fabrics like lace, sequins, or leather?</h3></summary>
+          <p>Yes. Our engine simulates specific material physics, including the transparency of lace, the reflectivity of sequins, and the structural stiffness of leather, providing a high-fidelity visual experience that matches the physical garment.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>What kind of analytics do you provide?</h3></summary>
+          <p>Our dashboard provides real-time data on "Try-On-to-Cart" conversion rates, most-tried-on items, and return rate correlations. We also offer direct integration with Google Analytics 4 (GA4) and Adobe Analytics.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Cluster Links -->
+  <section class="content-cluster" id="resources">
+    <div class="cluster-inner">
+      <h2 class="section-title">Learn more about virtual try-on</h2>
+      <div class="cluster-grid">
+        <a href="/blog/ultimate-guide-virtual-try-on" class="cluster-card cluster-pillar">
+          <span class="cluster-tag">Pillar Guide</span>
+          <h3>The Ultimate Guide to Virtual Try-On for Enterprise</h3>
+          <p>Everything you need to know about VTON technology, ROI, integration, and best practices for fashion and retail brands.</p>
+        </a>
+        <a href="/blog/integrate-vton-api-headless-commerce" class="cluster-card">
+          <span class="cluster-tag">Technical</span>
+          <h3>How to Integrate VTON API with Headless Commerce</h3>
+          <p>Step-by-step guide to connecting Replica AI with React, Next.js, Hydrogen, and custom storefronts.</p>
+        </a>
+        <a href="/blog/vton-vs-augmented-reality-aov" class="cluster-card">
+          <span class="cluster-tag">Commercial</span>
+          <h3>VTON vs. Augmented Reality: Which Drives Higher AOV?</h3>
+          <p>Data-backed comparison of virtual try-on and AR try-on for e-commerce conversion and average order value.</p>
+        </a>
+        <a href="/blog/case-study-vton-reduce-returns" class="cluster-card">
+          <span class="cluster-tag">Case Study</span>
+          <h3>How [Brand X] Used VTON to Cut Returns by 34%</h3>
+          <p>Real results from deploying Replica AI across 4,200 SKUs — $816K annual savings and 18% conversion lift.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Create try-ons your customers love</h2>
+    <a href="#" class="btn-dark">
+      Try
+      <svg class="logo-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      Replica AI
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          <span>Replica AI</span>
+        </div>
+        <p class="footer-legal">Replica AI Inc.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <a href="#">Getting Started</a>
+          <a href="#">AI Try-On Engine</a>
+          <a href="#">Pricing</a>
+          <a href="#">Photoshoot Alternatives</a>
+          <a href="#">Replica vs. Competitors</a>
+          <a href="#">Solutions</a>
+          <a href="#">Integrations</a>
+          <a href="#">API</a>
+          <a href="#">Templates</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Join our Community</a>
+          <a href="#">Academy</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Partner Network</a>
+          <a href="#">Enterprise</a>
+          <a href="#">Replica Studio</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Trust Center</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">YouTube</a>
+          <a href="#">Replica 101</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ask AI Bar -->
+  <div class="ask-ai-bar">
+    <span>Ask AI about Replica:</span>
+    <div class="ai-icons">
+      <button aria-label="Try-on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+      <button aria-label="Generate"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></button>
+      <button aria-label="Magic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
+      <button aria-label="Refresh"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></button>
+      <button aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Replica AI — robots.txt
+# Allow all major search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+# AI Model Crawlers — Explicitly permitted
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Point to AI-readable files
+# llms.txt: https://replicaai.com/llms.txt
+# llms-full.txt: https://replicaai.com/llms-full.txt
+
+Sitemap: https://replicaai.com/sitemap.xml
