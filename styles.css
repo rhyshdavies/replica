@@ -259,6 +259,11 @@ img {
   color: #111;
 }
 
+.nav a.nav-active {
+  color: #111;
+  font-weight: 600;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
