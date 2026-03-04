@@ -290,7 +290,7 @@ img {
 .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 160px;
@@ -299,16 +299,18 @@ img {
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   padding: 8px 0;
+  padding-top: 20px;
   z-index: 200;
 }
 
 .nav-dropdown-menu::before {
   content: "";
   position: absolute;
-  top: -8px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 8px;
+  height: 20px;
+  background: transparent;
 }
 
 .nav-dropdown-menu a {
