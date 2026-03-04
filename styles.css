@@ -943,6 +943,7 @@ img {
   max-width: 1200px;
   margin: 100px auto;
   padding: 0 32px;
+  scroll-margin-top: 80px;
 }
 
 .features-header {
@@ -1667,6 +1668,7 @@ img {
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 32px;
+  scroll-margin-top: 80px;
 }
 
 .data-inner {
@@ -1732,6 +1734,7 @@ td strong {
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 32px;
+  scroll-margin-top: 80px;
 }
 
 .faq-inner .section-title {
@@ -1895,6 +1898,7 @@ td strong {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 32px;
+  scroll-margin-top: 80px;
 }
 
 .solutions-inner {
@@ -2073,6 +2077,7 @@ td strong {
 .pricing-section {
   background: #fafafa;
   padding: 120px 32px;
+  scroll-margin-top: 80px;
 }
 
 .pricing-inner {
