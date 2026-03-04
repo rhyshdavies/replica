@@ -1890,6 +1890,312 @@ td strong {
   flex: 1;
 }
 
+/* ========== SOLUTIONS SECTION ========== */
+.solutions {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.solutions-inner {
+  text-align: center;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.solution-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.solution-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.solution-card-featured {
+  border-color: #111;
+  border-width: 2px;
+}
+
+.solution-icon {
+  width: 44px;
+  height: 44px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.solution-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.solution-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.solution-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  background: #f5f5f5;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ========== 3-COLUMN FEATURES GRID ========== */
+.features-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fm-perf {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.perf-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.perf-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+}
+
+.perf-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fm-browsers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.browser-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+.browser-icon {
+  font-size: 16px;
+}
+
+/* ========== DOCS GRID ========== */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.docs-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+.docs-card-icon {
+  width: 40px;
+  height: 40px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.docs-card-icon svg {
+  stroke: #fff;
+}
+
+.docs-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.docs-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.docs-snippet {
+  display: block;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  background: #111;
+  color: #0f0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* ========== PRICING SECTION ========== */
+.pricing-section {
+  background: #fafafa;
+  padding: 80px 32px;
+}
+
+.pricing-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-card-featured {
+  border-color: #111;
+  border-width: 2px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.pricing-tier {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.pricing-currency {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+.pricing-amount {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 14px;
+  color: #888;
+  margin-left: 4px;
+}
+
+.pricing-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-size: 14px;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #111;
+  font-weight: 600;
+}
+
+.pricing-cta {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 /* ========== RESPONSIVE: NEW SECTIONS ========== */
 @media (max-width: 968px) {
   .faq-grid {
@@ -1898,6 +2204,13 @@ td strong {
 
   .cluster-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .solutions-grid,
+  .docs-grid,
+  .pricing-grid,
+  .features-grid-3 {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1912,6 +2225,15 @@ td strong {
 
   th, td {
     padding: 10px 12px;
+  }
+
+  .fm-perf {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fm-browsers {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
