@@ -2058,8 +2058,6 @@ td strong {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   padding: 24px 0;
-  align-content: center;
-  height: 100%;
 }
 
 .browser-item {
