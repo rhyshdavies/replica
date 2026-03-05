@@ -979,7 +979,6 @@ img {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  overflow: hidden;
   transition: box-shadow 0.3s;
 }
 
@@ -1453,6 +1452,23 @@ img {
   gap: 40px;
 }
 
+.footer-links-inline {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.footer-links-inline a {
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links-inline a:hover {
+  color: #111;
+}
+
 .footer-col {
   display: flex;
   flex-direction: column;
@@ -1875,10 +1891,11 @@ td strong {
   padding: 3px 8px;
   border-radius: 4px;
   margin-bottom: 12px;
+  transition: background 0.2s, color 0.2s;
   width: fit-content;
 }
 
-.cluster-pillar .cluster-tag {
+.cluster-card:hover .cluster-tag {
   background: #111;
   color: #fff;
 }
@@ -1995,9 +2012,10 @@ td strong {
 }
 
 .perf-val {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: #111;
+  white-space: nowrap;
 }
 
 .perf-label {
