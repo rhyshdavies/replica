@@ -19,6 +19,8 @@
 - Export to PNG, JPEG, WebP, TIFF, and PSD formats
 - Analytics dashboard with conversion tracking
 
+> **Note:** API and SDK access is currently in Private Beta. Request access via [Book Demo](https://replicaai.com).
+
 ## Platform Integrations
 
 Shopify · BigCommerce · Salesforce Commerce Cloud · Custom headless (REST API + GraphQL) · React · Next.js · Vue SDKs

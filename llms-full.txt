@@ -52,67 +52,17 @@ Cotton · Silk · Denim · Leather · Linen · Chiffon · Velvet · Knit · Jers
 
 ---
 
-## 3. API Reference
+## 3. API & Integration
 
-### Base URL
-```
-https://api.replicaai.com/v1
-```
+### Access
+Access to the Replica AI SDK and API is currently restricted to **Private Beta partners**. To request an API key and integration support, book a demo at [replicaai.com](https://replicaai.com) or contact jacopo@myreplica.io.
 
-### Authentication
-All requests require a Bearer token in the Authorization header:
-```
-Authorization: Bearer YOUR_API_KEY
-```
-
-### Key Endpoints
-
-#### POST /try-on
-Generate a virtual try-on image.
-
-**Request body:**
-```json
-{
-  "model_image": "https://example.com/model.jpg",
-  "garment_image": "https://example.com/garment.jpg",
-  "options": {
-    "resolution": "2048x2048",
-    "format": "png",
-    "background": "transparent",
-    "lighting_profile": "studio_soft"
-  }
-}
-```
-
-**Response:**
-```json
-{
-  "id": "tryon_abc123",
-  "status": "completed",
-  "output_url": "https://cdn.replicaai.com/output/tryon_abc123.png",
-  "metadata": {
-    "render_time_ms": 2340,
-    "quality_score": 0.97,
-    "color_accuracy_delta_e": 1.4
-  }
-}
-```
-
-#### POST /batch
-Process multiple try-on requests asynchronously.
-
-#### GET /models
-List available AI model presets (body types, poses, demographics).
-
-#### GET /garments/{id}
-Retrieve garment analysis metadata (category, fabric type, color palette).
-
-#### POST /brand-profile
-Configure brand-specific rendering rules (model pool, lighting, backgrounds, color calibration).
-
-### SDKs
-- JavaScript/TypeScript: `npm install @replicaai/sdk`
-- Python: `pip install replicaai`
+### Capabilities (Private Beta)
+- **POST /try-on** — Generate a virtual try-on image from a model photo and garment photo
+- **POST /batch** — Process multiple try-on requests asynchronously for catalog-scale operations
+- **GET /models** — List available AI model presets (body types, poses, demographics)
+- **GET /garments/{id}** — Retrieve garment analysis metadata (category, fabric type, color palette)
+- **POST /brand-profile** — Configure brand-specific rendering rules (model pool, lighting, backgrounds, color calibration)
 
 ### Platform Integrations
 Shopify · BigCommerce · Salesforce Commerce Cloud · Custom headless (REST API + GraphQL) · React · Next.js · Vue SDKs

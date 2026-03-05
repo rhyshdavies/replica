@@ -19,6 +19,7 @@
   <meta property="og:url" content="https://replicaai.com/integration">
   <meta property="og:site_name" content="Replica AI">
 
+  <link rel="icon" href="/logo.png">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -562,7 +563,7 @@
         <h3>1-Line DOM Injection</h3>
         <p>A single asynchronous script tag attaches the VTON widget to any product page. The script detects your DOM structure, identifies product image containers, and injects the try-on trigger, zero configuration required.</p>
         <div class="card-code">
-          <span class="cm">&lt;!-- Add to your product template --&gt;</span><br>
+          <span class="cm">&lt;!-- Private Beta: add to your product template --&gt;</span><br>
           &lt;script <span class="kw">src</span>=<span class="str">"https://cdn.replicaai.com/vton.js"</span><br>
           &nbsp;&nbsp;<span class="kw">async</span> <span class="kw">defer</span><br>
           &nbsp;&nbsp;<span class="kw">data-store</span>=<span class="str">"your-store-id"</span>&gt;<br>
@@ -588,6 +589,7 @@
         <h3>REST API & Webhooks</h3>
         <p>Full programmatic access for headless commerce stacks. The SKU Mapping API ingests product photography asynchronously, and webhook events stream render completions, analytics, and error states in real time.</p>
         <div class="card-code">
+          <span class="cm">// Private Beta endpoints</span><br>
           <span class="fn">POST</span> <span class="str">/api/v1/skus/ingest</span><br>
           <span class="fn">GET</span>&nbsp; <span class="str">/api/v1/render/{id}/status</span><br>
           <span class="fn">GET</span>&nbsp; <span class="str">/api/v1/analytics/conversion</span><br>
@@ -643,6 +645,8 @@
       </div>
     </div>
   </section>
+
+  <p style="text-align:center; font-size:12px; color:var(--text-muted); margin: 0 auto; padding: 0 32px 40px;">Last updated: March 2026</p>
 
   <!-- CTA -->
   <section class="cta-section">
