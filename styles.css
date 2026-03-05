@@ -2072,6 +2072,13 @@ td strong {
   font-size: 16px;
 }
 
+.browser-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 /* ========== DOCS GRID ========== */
 .docs-grid {
   display: grid;
