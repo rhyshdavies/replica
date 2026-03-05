@@ -1923,6 +1923,7 @@ td strong {
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 32px 28px;
+  text-align: center;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
