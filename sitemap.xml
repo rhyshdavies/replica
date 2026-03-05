@@ -66,6 +66,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://replicaai.com/integration</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Content Cluster: Pillar Page -->
   <url>
     <loc>https://replicaai.com/blog/ultimate-guide-virtual-try-on</loc>

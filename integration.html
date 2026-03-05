@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Overview — Replica AI Integration Architecture</title>
+  <meta name="description" content="Technical overview of Replica AI's VTON integration architecture: Neural rendering pipeline, asynchronous edge deployment, and enterprise-grade security for CTOs and engineering leads.">
+  <meta name="keywords" content="VTON integration, virtual try-on API, neural architecture, edge network, enterprise security, headless commerce, asynchronous rendering">
+  <link rel="canonical" href="https://replicaai.com/integration">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Technical Overview — Replica AI Integration Architecture">
+  <meta property="og:description" content="Neural architecture, integration logic, and enterprise security for Replica AI's VTON engine.">
+  <meta property="og:url" content="https://replicaai.com/integration">
+  <meta property="og:site_name" content="Replica AI">
+
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0b;
+      --surface: #131316;
+      --surface-2: #1a1a1f;
+      --border: #2a2a30;
+      --text: #e4e4e7;
+      --text-muted: #8b8b94;
+      --accent: #22c55e;
+      --accent-dim: rgba(34, 197, 94, 0.12);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 11, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo svg { stroke: var(--text); }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-nav a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover, .header-nav a.active {
+      color: var(--text);
+    }
+
+    .btn-demo {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--text);
+      color: var(--bg);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-demo:hover { opacity: 0.85; }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--mono);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-meta-val {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-meta-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .section h2 {
+      font-family: var(--mono);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    /* Cards grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover { border-color: #3a3a42; }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card-icon svg { stroke: var(--accent); }
+
+    .card h3 {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Code block inside card */
+    .card-code {
+      margin-top: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      overflow-x: auto;
+      line-height: 1.7;
+    }
+
+    .card-code .kw { color: #c084fc; }
+    .card-code .str { color: #22c55e; }
+    .card-code .cm { color: #4a4a52; }
+    .card-code .fn { color: #60a5fa; }
+
+    /* Specs list */
+    .specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .spec {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .spec-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Architecture diagram */
+    .arch-diagram {
+      margin-top: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 40px 32px;
+    }
+
+    .arch-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .arch-node {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      text-align: center;
+      min-width: 130px;
+    }
+
+    .arch-node-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .arch-node-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .arch-arrow {
+      color: var(--accent);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 32px 100px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: var(--mono);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .cta-section .btn-demo {
+      padding: 12px 28px;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer a:hover { color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 20px 48px; }
+      .section { padding: 60px 20px; }
+      .cta-section { padding: 60px 20px 80px; }
+      .header-nav { display: none; }
+      .hero-meta { flex-wrap: wrap; gap: 20px; }
+      .cards { grid-template-columns: 1fr; }
+      .arch-flow { flex-direction: column; }
+      .arch-arrow { transform: rotate(90deg); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Replica AI — Technical Integration Overview",
+    "description": "Technical overview of Replica AI's neural VTON architecture, asynchronous edge integration, and enterprise security model.",
+    "author": { "@type": "Organization", "name": "Replica AI" },
+    "publisher": { "@type": "Organization", "name": "Replica AI" },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Replica AI VTON Engine",
+      "applicationCategory": "FashionTech",
+      "operatingSystem": "Web"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://replicaai.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Integration", "item": "https://replicaai.com/integration" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        <span>Replica AI</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/#product-title">Product</a>
+        <a href="/#showcase">Solutions</a>
+        <a href="/integration.html" class="active">Documentation</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a href="https://calendar.app.google/VJRwnwincNdS2nEz7" class="btn-demo" target="_blank" rel="noopener">Book demo</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-eyebrow">// Technical Overview</div>
+    <h1>Integration Architecture</h1>
+    <p class="hero-desc">A high-level reference for engineering teams evaluating Replica AI. Covers the neural rendering pipeline, asynchronous edge deployment model, and enterprise security posture.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">&lt; 50kb</span>
+        <span class="hero-meta-label">Client Payload</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">2.1s</span>
+        <span class="hero-meta-label">Avg. Render</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">99.95%</span>
+        <span class="hero-meta-label">Uptime SLA</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">SOC 2</span>
+        <span class="hero-meta-label">Compliance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section A: Neural Architecture -->
+  <section class="section" id="neural-architecture">
+    <div class="section-label">Section A</div>
+    <h2>Neural Architecture</h2>
+    <p class="section-desc">The rendering pipeline that transforms 2D product photography into photorealistic garment overlays — without 3D assets, manual retouching, or GPU requirements on the client.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3>Neural Radiance Fields</h3>
+        <p>The engine constructs a volumetric 3D representation of the garment from a single 2D input. Fabric weight, opacity, and stretch parameters are inferred asynchronously before the render pass begins.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>Latent Diffusion</span>
+          <span class="spec"><span class="spec-dot"></span>NeRF v3</span>
+          <span class="spec"><span class="spec-dot"></span>50+ Fabric Types</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Pose Estimation Pipeline</h3>
+        <p>A multi-stage pose detector maps 17 anatomical keypoints on the user's body in real time. The garment mesh deforms to match detected body geometry before composite rendering.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>17 Keypoints</span>
+          <span class="spec"><span class="spec-dot"></span>Real-Time</span>
+          <span class="spec"><span class="spec-dot"></span>Delta-E &lt; 2.0</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Composite Output</h3>
+        <p>Final render composites garment, skin-boundary blending, matched lighting, and ambient shadow in a single pass. Output supports PNG, WebP, and JPEG at resolutions up to 4K.</p>
+        <div class="card-code">
+          <span class="cm">// Output configuration</span><br>
+          <span class="kw">const</span> config = {<br>
+          &nbsp;&nbsp;format: <span class="str">"webp"</span>,<br>
+          &nbsp;&nbsp;resolution: <span class="str">"4096x4096"</span>,<br>
+          &nbsp;&nbsp;colorSpace: <span class="str">"sRGB"</span><br>
+          };
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-diagram">
+      <div class="arch-flow">
+        <div class="arch-node">
+          <div class="arch-node-label">2D Input</div>
+          <div class="arch-node-sub">Flat-lay / Mannequin</div>
+        </div>
+        <span class="arch-arrow">→</span>
+        <div class="arch-node">
+          <div class="arch-node-label">NeRF Engine</div>
+          <div class="arch-node-sub">3D Reconstruction</div>
+        </div>
+        <span class="arch-arrow">→</span>
+        <div class="arch-node">
+          <div class="arch-node-label">Pose Mapper</div>
+          <div class="arch-node-sub">Keypoint Detection</div>
+        </div>
+        <span class="arch-arrow">→</span>
+        <div class="arch-node">
+          <div class="arch-node-label">Compositor</div>
+          <div class="arch-node-sub">Light + Shadow</div>
+        </div>
+        <span class="arch-arrow">→</span>
+        <div class="arch-node">
+          <div class="arch-node-label">Output</div>
+          <div class="arch-node-sub">4K / WebP / PNG</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B: Integration Logic -->
+  <section class="section" id="integration-logic">
+    <div class="section-label">Section B</div>
+    <h2>Integration Logic</h2>
+    <p class="section-desc">Asynchronous, non-blocking deployment that preserves your Core Web Vitals. The client script attaches to your existing DOM structure without layout shifts or render-blocking requests.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>1-Line DOM Injection</h3>
+        <p>A single asynchronous script tag attaches the VTON widget to any product page. The script detects your DOM structure, identifies product image containers, and injects the try-on trigger — zero configuration required.</p>
+        <div class="card-code">
+          <span class="cm">&lt;!-- Add to your product template --&gt;</span><br>
+          &lt;script <span class="kw">src</span>=<span class="str">"https://cdn.replicaai.com/vton.js"</span><br>
+          &nbsp;&nbsp;<span class="kw">async</span> <span class="kw">defer</span><br>
+          &nbsp;&nbsp;<span class="kw">data-store</span>=<span class="str">"your-store-id"</span>&gt;<br>
+          &lt;/script&gt;
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+        </div>
+        <h3>Edge Network Delivery</h3>
+        <p>Render requests are routed to the nearest edge node in our global CDN. Asynchronous processing ensures the host page remains interactive while the VTON engine completes the render pass in the background.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>28 Edge Locations</span>
+          <span class="spec"><span class="spec-dot"></span>Async Processing</span>
+          <span class="spec"><span class="spec-dot"></span>&lt; 80ms TTFB</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>REST API & Webhooks</h3>
+        <p>Full programmatic access for headless commerce stacks. The SKU Mapping API ingests product photography asynchronously, and webhook events stream render completions, analytics, and error states in real time.</p>
+        <div class="card-code">
+          <span class="fn">POST</span> <span class="str">/api/v1/skus/ingest</span><br>
+          <span class="fn">GET</span>&nbsp; <span class="str">/api/v1/render/{id}/status</span><br>
+          <span class="fn">GET</span>&nbsp; <span class="str">/api/v1/analytics/conversion</span><br>
+          <span class="cm">// Webhook: render.completed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C: Enterprise Security -->
+  <section class="section" id="enterprise-security">
+    <div class="section-label">Section C</div>
+    <h2>Enterprise Security</h2>
+    <p class="section-desc">Built for regulated industries and enterprise procurement. Zero persistent user data, encrypted transit, and independently audited infrastructure.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Data Privacy & Compliance</h3>
+        <p>Fully GDPR and CCPA compliant. User photos are processed ephemerally — session-only, never stored unless explicitly opted in. All data transmission uses TLS 1.3 encryption end-to-end.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>GDPR</span>
+          <span class="spec"><span class="spec-dot"></span>CCPA</span>
+          <span class="spec"><span class="spec-dot"></span>TLS 1.3</span>
+          <span class="spec"><span class="spec-dot"></span>Ephemeral Processing</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>SOC 2 Type II Audit</h3>
+        <p>Infrastructure independently audited against SOC 2 Type II controls. Annual penetration testing by third-party firms. Role-based access control (RBAC) with SSO integration for enterprise admin dashboards.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>SOC 2 Type II</span>
+          <span class="spec"><span class="spec-dot"></span>Annual Pen Test</span>
+          <span class="spec"><span class="spec-dot"></span>RBAC + SSO</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Uptime & SLA</h3>
+        <p>99.95% uptime SLA backed by multi-region failover. Dedicated status page with real-time incident reporting. Enterprise contracts include priority support with sub-30-minute response for P0 incidents.</p>
+        <div class="specs">
+          <span class="spec"><span class="spec-dot"></span>99.95% SLA</span>
+          <span class="spec"><span class="spec-dot"></span>Multi-Region</span>
+          <span class="spec"><span class="spec-dot"></span>P0: &lt; 30min</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to evaluate?</h2>
+    <p>Book a technical walkthrough with our integration engineering team.</p>
+    <a href="https://calendar.app.google/VJRwnwincNdS2nEz7" class="btn-demo" target="_blank" rel="noopener">Book demo</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Replica AI Inc. &nbsp;·&nbsp; <a href="/">Home</a> &nbsp;·&nbsp; <a href="/what-is-vton.html">What is VTON?</a></p>
+  </footer>
+
+</body>
+</html>
