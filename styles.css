@@ -444,8 +444,13 @@ img {
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   font-size: 16px;
+}
+
+.mobile-menu nav a {
+  padding: 10px 0;
+  display: block;
 }
 
 .mobile-menu.active {
@@ -1553,6 +1558,22 @@ img {
     max-width: 240px;
   }
 
+  .vton-page {
+    padding: 32px 20px 60px;
+  }
+
+  .vton-page h1 {
+    font-size: 28px;
+  }
+
+  .vton-page-h2 {
+    font-size: 18px;
+  }
+
+  .breadcrumb {
+    padding: 12px 20px;
+  }
+
   .nav {
     display: none;
   }
@@ -2333,7 +2354,178 @@ td strong {
   }
 }
 
-/* Bottom padding for fixed AI bar */
-body {
-  padding-bottom: 56px;
+/* ========== MOBILE OPTIMIZATIONS ========== */
+
+@media (max-width: 968px) {
+  .announcement-bar {
+    padding: 10px 40px 10px 16px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 48px 20px 40px;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-tabs {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .solutions {
+    padding: 48px 20px;
+  }
+
+  .solution-card {
+    text-align: left;
+  }
+
+  .solution-icon {
+    margin: 0 0 16px 0;
+  }
+
+  .features {
+    margin: 60px auto;
+  }
+
+  .pricing-section {
+    padding: 60px 20px;
+  }
+
+  .pricing-hero-desc {
+    font-size: 16px;
+  }
+
+  .content-cluster {
+    margin: 48px auto;
+  }
+
+  .faq-section {
+    margin: 48px auto;
+  }
+
+  .final-cta {
+    padding: 60px 20px 40px;
+  }
+
+  .footer {
+    padding: 40px 20px 32px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-links-inline {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .announcement-bar {
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 8px 36px 8px 12px;
+  }
+
+  .announcement-close {
+    right: 10px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-tabs {
+    gap: 8px 12px;
+  }
+
+  .hero-tabs button {
+    font-size: 12px;
+    padding-bottom: 2px;
+  }
+
+  .citation-block {
+    font-size: 14px;
+  }
+
+  .solution-card {
+    padding: 24px 20px;
+  }
+
+  .solution-card h3 {
+    font-size: 16px;
+  }
+
+  .solution-card p {
+    font-size: 13px;
+  }
+
+  .feature-card {
+    padding: 24px;
+  }
+
+  .feature-card-header h3 {
+    font-size: 15px;
+  }
+
+  .perf-val {
+    font-size: 16px;
+  }
+
+  .perf-label {
+    font-size: 10px;
+  }
+
+  .final-cta h2 {
+    font-size: 24px;
+  }
+
+  .btn-dark {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .footer-legal {
+    font-size: 11px;
+  }
+
+  .footer-links-inline {
+    gap: 12px 20px;
+  }
+
+  .footer-links-inline a {
+    font-size: 12px;
+  }
+
+  .pricing-highlights {
+    align-items: flex-start;
+  }
+
+  .pricing-highlight {
+    font-size: 13px;
+  }
+
+  .faq-item summary {
+    padding: 16px 18px;
+  }
+
+  .faq-item summary h3 {
+    font-size: 13px;
+  }
+
+  .faq-item > p {
+    padding: 0 18px 16px;
+    font-size: 12px;
+  }
+
+  .cluster-card {
+    padding: 20px;
+  }
 }
