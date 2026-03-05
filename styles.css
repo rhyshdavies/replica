@@ -564,6 +564,12 @@ img {
   overflow: hidden;
 }
 
+.mockup-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .mockup-model {
   position: relative;
   width: 80px;
@@ -1456,6 +1462,7 @@ img {
   display: flex;
   gap: 32px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .footer-links-inline a {

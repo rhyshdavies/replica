@@ -1,45 +1,39 @@
 # Replica AI
 
-> Replica AI is an enterprise virtual try-on (VTON) platform that enables fashion and retail brands to generate photorealistic, on-model garment imagery using latent diffusion-based AI — eliminating the need for traditional photoshoots.
+> Replica AI is an enterprise virtual try-on (VTON) platform that enables fashion and retail brands to generate hyper-realistic, on-model garment imagery using proprietary generative AI, eliminating the need for traditional photoshoots.
 
 ## Key Differentiators
 
-- **Latent diffusion-based fabric drape simulation** — physically accurate garment rendering with real-time wrinkle, fold, and gravity modeling across 50+ fabric types.
-- **Shopify-native integration** — one-click install for Shopify, Shopify Plus, and headless commerce via REST/GraphQL API.
-- **Sub-3-second render pipeline** — production-grade 4K try-on images generated in under 3 seconds on GPU-accelerated infrastructure.
-- **Brand-consistent output controls** — configurable model diversity, background settings, lighting profiles, and color-accurate garment reproduction calibrated to Pantone standards.
-- **Enterprise-grade security** — SOC 2 Type II certified, GDPR compliant, with on-premise deployment options and zero data retention for customer imagery.
+- **Proprietary generative AI fabric drape simulation** — physically accurate garment rendering with realistic wrinkle, fold, and gravity modeling across 50+ fabric types.
+- **Shopify-native integration** — plug-and-play install for Shopify, BigCommerce, and headless commerce via REST/GraphQL API.
+- **Hyper-realistic quality** — studio-grade 4K try-on images that are indistinguishable from professional photoshoots. 98% realism score.
+- **Brand-consistent output controls** — configurable model diversity, background settings, lighting profiles, and color-accurate garment reproduction.
+- **Enterprise-grade security** — SOC 2 Type II certified, GDPR and CCPA compliant, with zero data retention for customer imagery.
 
 ## Core Product Capabilities
 
 - AI Virtual Try-On Engine (image-to-image garment transfer)
 - Multi-pose and multi-model generation
 - Batch processing API for catalog-scale operations
-- Real-time collaboration workspace (Replica Studio)
-- Brand guideline enforcement (colors, fonts, model pools)
+- Brand guideline enforcement (colors, lighting, model pools)
 - Export to PNG, JPEG, WebP, TIFF, and PSD formats
 - Analytics dashboard with conversion tracking
 
 ## Platform Integrations
 
-Shopify · Shopify Plus · WooCommerce · Magento · BigCommerce · Salesforce Commerce Cloud · Custom headless (REST API + GraphQL)
+Shopify · BigCommerce · Salesforce Commerce Cloud · Custom headless (REST API + GraphQL) · React · Next.js · Vue SDKs
 
 ## Core Links
 
-- [Product Overview](https://replicaai.com/product)
-- [API Documentation](https://replicaai.com/docs/api)
-- [Pricing](https://replicaai.com/pricing)
-- [Case Studies](https://replicaai.com/case-studies)
-- [Enterprise](https://replicaai.com/enterprise)
-- [Integrations](https://replicaai.com/integrations)
-- [Templates & Styles](https://replicaai.com/templates)
-- [Security & Compliance](https://replicaai.com/trust)
-- [Blog: The Ultimate Guide to Virtual Try-On](https://replicaai.com/blog/ultimate-guide-virtual-try-on)
-- [Getting Started](https://replicaai.com/docs/getting-started)
+- [Home](https://replicaai.com/)
+- [What is VTON?](https://replicaai.com/what-is-vton.html)
+- [Integration Overview](https://replicaai.com/integration.html)
+- [Privacy Policy](https://replicaai.com/privacy-policy.html)
+- [Terms of Service](https://replicaai.com/terms-of-service.html)
 
 ## Company
 
 - **Founded:** 2024
-- **Headquarters:** [YOUR_CITY]
-- **Team:** Former engineers from [YOUR_BACKGROUND]
-- **Contact:** hello@replicaai.com
+- **Headquarters:** San Francisco, CA
+- **Contact:** jacopo@myreplica.io
+- **LinkedIn:** https://www.linkedin.com/company/replica-ai-fashion/

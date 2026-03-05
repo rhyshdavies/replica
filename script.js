@@ -192,4 +192,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const fmChart = document.querySelector('.fm-chart');
   if (fmChart) chartObserver.observe(fmChart);
+
+  // Hero tab image switching
+  const heroTabs = document.querySelectorAll('.hero-tabs button');
+  const heroImg = document.getElementById('heroTabImage');
+  if (heroImg && heroTabs.length) {
+    heroTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        heroTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const src = tab.getAttribute('data-img');
+        if (src) {
+          heroImg.src = src;
+          heroImg.style.display = 'block';
+        } else {
+          heroImg.style.display = 'none';
+        }
+      });
+    });
+  }
 });
