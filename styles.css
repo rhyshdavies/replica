@@ -976,7 +976,13 @@ img {
   border: 1px solid #eee;
   border-radius: 16px;
   padding: 32px;
+  display: flex;
+  flex-direction: column;
   transition: box-shadow 0.3s;
+}
+
+.feature-card .feature-mockup {
+  margin-top: auto;
 }
 
 .feature-card:hover {
