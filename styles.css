@@ -947,11 +947,8 @@ img {
 }
 
 .features-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  text-align: center;
   margin-bottom: 48px;
-  align-items: start;
 }
 
 .section-title {
@@ -1556,8 +1553,7 @@ img {
   }
 
   .features-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    margin-bottom: 32px;
   }
 
   .features-grid {
@@ -1650,7 +1646,8 @@ img {
 }
 
 .features-header .citation-block {
-  grid-column: 1 / -1;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 8px;
 }
 
