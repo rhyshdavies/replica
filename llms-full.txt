@@ -55,7 +55,7 @@ Cotton · Silk · Denim · Leather · Linen · Chiffon · Velvet · Knit · Jers
 ## 3. API & Integration
 
 ### Access
-Access to the Replica AI SDK and API is currently restricted to **Private Beta partners**. To request an API key and integration support, book a demo at [replicaai.com](https://replicaai.com) or contact jacopo@myreplica.io.
+Access to the Replica AI SDK and API is currently restricted to **Private Beta partners**. To request an API key and integration support, book a demo at [myreplica.io](https://myreplica.io) or contact jacopo@myreplica.io.
 
 ### Capabilities (Private Beta)
 - **POST /try-on** — Generate a virtual try-on image from a model photo and garment photo

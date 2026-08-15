@@ -19,7 +19,7 @@
 - Export to PNG, JPEG, WebP, TIFF, and PSD formats
 - Analytics dashboard with conversion tracking
 
-> **Note:** API and SDK access is currently in Private Beta. Request access via [Book Demo](https://replicaai.com).
+> **Note:** API and SDK access is currently in Private Beta. Request access via [Book Demo](https://myreplica.io).
 
 ## Platform Integrations
 
@@ -27,11 +27,11 @@ Shopify · BigCommerce · Salesforce Commerce Cloud · Custom headless (REST API
 
 ## Core Links
 
-- [Home](https://replicaai.com/)
-- [What is VTON?](https://replicaai.com/what-is-vton.html)
-- [Integration Overview](https://replicaai.com/integration.html)
-- [Privacy Policy](https://replicaai.com/privacy-policy.html)
-- [Terms of Service](https://replicaai.com/terms-of-service.html)
+- [Home](https://myreplica.io/)
+- [What is VTON?](https://myreplica.io/what-is-vton.html)
+- [Integration Overview](https://myreplica.io/integration.html)
+- [Privacy Policy](https://myreplica.io/privacy-policy.html)
+- [Terms of Service](https://myreplica.io/terms-of-service.html)
 
 ## Company
 

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://replicaai.com/</loc>
+    <loc>https://myreplica.io/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/what-is-vton.html</loc>
+    <loc>https://myreplica.io/what-is-vton.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/integration.html</loc>
+    <loc>https://myreplica.io/integration.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/privacy-policy.html</loc>
+    <loc>https://myreplica.io/privacy-policy.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/terms-of-service.html</loc>
+    <loc>https://myreplica.io/terms-of-service.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/llms.txt</loc>
+    <loc>https://myreplica.io/llms.txt</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://replicaai.com/llms-full.txt</loc>
+    <loc>https://myreplica.io/llms-full.txt</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>

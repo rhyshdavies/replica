@@ -36,7 +36,7 @@ User-agent: CCBot
 Allow: /
 
 # Point to AI-readable files
-# llms.txt: https://replicaai.com/llms.txt
-# llms-full.txt: https://replicaai.com/llms-full.txt
+# llms.txt: https://myreplica.io/llms.txt
+# llms-full.txt: https://myreplica.io/llms-full.txt
 
-Sitemap: https://replicaai.com/sitemap.xml
+Sitemap: https://myreplica.io/sitemap.xml
